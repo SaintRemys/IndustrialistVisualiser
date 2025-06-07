@@ -80,16 +80,25 @@ function drawGrid() {
     ctx.stroke();
   }
 
-  for (const item of placedItems) {
-    ctx.fillStyle = "#2d2d2d";
-    ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    ctx.lineWidth = 2 / zoom;
-    ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
+for (const item of placedItems) {
+  ctx.fillStyle = "#2d2d2d";
+  ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
+  ctx.lineWidth = 2 / zoom;
+  ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
+  
+  ctx.fillStyle = "white";
+  ctx.font = `12px Arial`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
 
-    ctx.fillStyle = "black";
-    ctx.font = `12px Arial`;
-    ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20/zoom);
-  }
+  const centerX = item.x * GRID_SIZE + (item.width * GRID_SIZE) / 2;
+  const centerY = item.y * GRID_SIZE + (item.height * GRID_SIZE) / 2;
+  
+  ctx.fillText(item.name, centerX, centerY);
+  
+  ctx.textAlign = "start";
+  ctx.textBaseline = "alphabetic";
+}
 
 
   if (currentMode === "build" && currentItem) {
