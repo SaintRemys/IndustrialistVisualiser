@@ -44,7 +44,8 @@ html, body {
   background: #ddd;
   border-right: 2px solid #aaa;
   padding: 10px;
-    }
+  display: flex;
+}
 .item {
   background: #fff;
   margin-bottom: 10px;
