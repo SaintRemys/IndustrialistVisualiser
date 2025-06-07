@@ -1,6 +1,6 @@
 .mode-btn {
-  background: linear-gradient(to bottom, #272727, #000000);
-  border: 2px solid transparent;
+  background: linear-gradient(to bottom, #272727, black);
+  border: 2px solid black;
   border-radius: 12px;
   padding: 8px;
   margin: 0 10px;
@@ -25,7 +25,7 @@
 }
 
 .mode-btn.active {
-  border: 2px solid red;
+  border: 2px solid linear-gradient(#790000, #e40603);
   width: 65px;
   height: 65px;
 }
