@@ -326,7 +326,8 @@ canvas.addEventListener("click", e => {
       if (itemIndex > -1) {
         totalCost -= clickedItem.price;
         placedItems.splice(itemIndex, 1);
-        document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+        showNotification(`-$${currentItem.price}`, 5000);
+        document.getElementById("totalCost").innerHTML = `<i>Total: $${totalCost}<i>`;
       }
       highlightedItem = null;
     } else {
