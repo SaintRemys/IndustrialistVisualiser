@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
-canvas.width = 500;
-canvas.height = 500;
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
 
 let offsetX = 0, offsetY = 0;
 let zoom = 1;
