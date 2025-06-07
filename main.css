@@ -85,8 +85,6 @@ canvas {
   left: 200px;
   right: 0;
   bottom: 0;
-  width: 500px; 
-  height: 500px;
   background: #bfbfbf;
   display: block;
 }
