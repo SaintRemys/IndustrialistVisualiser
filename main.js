@@ -1,26 +1,9 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
+
 console.log('CSS display size:', canvas.offsetWidth, 'x', canvas.offsetHeight);
 console.log('Internal resolution:', canvas.width, 'x', canvas.height);
 console.log('Should match?', canvas.offsetWidth === canvas.width, canvas.offsetHeight === canvas.height);
-
-// Keep trying until it's not the default size
-function initCanvas() {
- if (!setCanvasSize()) {
-   requestAnimationFrame(initCanvas);
- }
-}
-
-// Start immediately
-initCanvas();
-
-// Also handle window resize
-window.addEventListener('resize', () => {
- canvas.width = canvas.offsetWidth;
- canvas.height = canvas.offsetHeight;
- drawGrid();
-});
-
 
 let offsetX = 0, offsetY = 0;
 let zoom = 1;
