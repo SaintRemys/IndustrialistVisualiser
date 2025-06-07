@@ -81,14 +81,13 @@ function drawGrid() {
   }
 
   for (const item of placedItems) {
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "#2d2d2d";
     ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    ctx.strokeStyle = "black";
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
 
     ctx.fillStyle = "black";
-    ctx.font = `${14/zoom}px Arial`;
+    ctx.font = `12px Arial`;
     ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20/zoom);
   }
 
