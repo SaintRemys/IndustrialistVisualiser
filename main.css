@@ -45,6 +45,7 @@ html, body {
   background: #ddd;
   border-right: 2px solid #aaa;
   padding: 10px;
+  zindex: 2;
 }
 .item {
   background: #fff;
