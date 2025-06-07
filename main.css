@@ -15,8 +15,8 @@
 
 .mode-btn:hover {
   border: 2px solid white;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 
 .mode-btn img {
@@ -26,8 +26,8 @@
 
 .mode-btn.active {
   border: 2px solid red;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 
 html, body {
