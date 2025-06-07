@@ -1,0 +1,139 @@
+// main.js
+const canvas = document.getElementById("gridCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth - 200;
+canvas.height = window.innerHeight;
+
+let offsetX = 0, offsetY = 0;
+let zoom = 1;
+let isDragging = false;
+let lastX, lastY;
+let placedItems = [];
+let currentItem = null;
+let currentMode = "build";
+let totalCost = 0;
+
+function drawGrid() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.translate(offsetX, offsetY);
+  ctx.scale(zoom, zoom);
+
+  const gridSize = 50;
+  const cols = canvas.width / zoom / gridSize + 2;
+  const rows = canvas.height / zoom / gridSize + 2;
+  const startX = -offsetX / zoom - 1;
+  const startY = -offsetY / zoom - 1;
+
+  ctx.strokeStyle = "#ccc";
+  for (let x = Math.floor(startX / gridSize) * gridSize; x < startX + cols * gridSize; x += gridSize) {
+    ctx.beginPath();
+    ctx.moveTo(x, startY);
+    ctx.lineTo(x, startY + rows * gridSize);
+    ctx.stroke();
+  }
+
+  for (let y = Math.floor(startY / gridSize) * gridSize; y < startY + rows * gridSize; y += gridSize) {
+    ctx.beginPath();
+    ctx.moveTo(startX, y);
+    ctx.lineTo(startX + cols * gridSize, y);
+    ctx.stroke();
+  }
+
+  for (let item of placedItems) {
+    ctx.fillStyle = "orange";
+    ctx.fillRect(item.x * gridSize, item.y * gridSize, item.width * gridSize, item.height * gridSize);
+    ctx.fillStyle = "black";
+    ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
+  }
+
+  ctx.restore();
+}
+
+canvas.addEventListener("mousedown", e => {
+  isDragging = true;
+  lastX = e.clientX;
+  lastY = e.clientY;
+});
+canvas.addEventListener("mouseup", () => isDragging = false);
+canvas.addEventListener("mouseleave", () => isDragging = false);
+canvas.addEventListener("mousemove", e => {
+  if (isDragging) {
+    offsetX += e.clientX - lastX;
+    offsetY += e.clientY - lastY;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    drawGrid();
+  }
+});
+
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  const zoomFactor = 1.1;
+  const mouseX = e.clientX - 200;
+  const mouseY = e.clientY;
+  const wheel = e.deltaY < 0 ? 1 : -1;
+  const zoomAmount = wheel > 0 ? zoomFactor : 1 / zoomFactor;
+  const worldX = (mouseX - offsetX) / zoom;
+  const worldY = (mouseY - offsetY) / zoom;
+  zoom *= zoomAmount;
+  offsetX = mouseX - worldX * zoom;
+  offsetY = mouseY - worldY * zoom;
+  drawGrid();
+});
+
+canvas.addEventListener("click", e => {
+  if (currentMode !== "build" || !currentItem) return;
+  const mouseX = e.clientX - 200;
+  const mouseY = e.clientY;
+  const worldX = Math.floor((mouseX - offsetX) / (50 * zoom));
+  const worldY = Math.floor((mouseY - offsetY) / (50 * zoom));
+  placedItems.push({
+    x: worldX,
+    y: worldY,
+    name: currentItem.name,
+    price: currentItem.price,
+    width: currentItem.width,
+    height: currentItem.height
+  });
+  totalCost += currentItem.price;
+  document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+  drawGrid();
+});
+
+document.querySelectorAll(".item").forEach(item => {
+  item.addEventListener("click", () => {
+    currentItem = {
+      name: item.dataset.name,
+      price: parseInt(item.dataset.price),
+      width: parseInt(item.dataset.width),
+      height: parseInt(item.dataset.height)
+    };
+  });
+});
+
+document.querySelectorAll(".mode-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentMode = btn.dataset.mode;
+    document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key >= "1" && e.key <= "4") {
+    const modes = ["build", "wire", "pipe", "delete"];
+    currentMode = modes[parseInt(e.key) - 1];
+    document.querySelectorAll(".mode-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.mode === currentMode);
+    });
+  }
+});
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth - 200;
+  canvas.height = window.innerHeight;
+  drawGrid();
+});
+
+drawGrid();
