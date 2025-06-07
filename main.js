@@ -1,10 +1,18 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
-window.onload = function() {
+// Wait for layout to be calculated
+window.addEventListener('load', function() {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
-  drawGrid();
-};
+  drawGrid(); // Redraw after sizing
+});
+
+// Also handle resize
+window.addEventListener('resize', function() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  drawGrid(); // Redraw after sizing
+});
 
 
 let offsetX = 0, offsetY = 0;
