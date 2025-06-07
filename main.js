@@ -77,8 +77,10 @@ function showNotification(message, duration = 3000) {
   box.style.opacity = "1";
   box.style.textAlign = "right";
   box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
+  box.style.margin = "0";
 
-  document.getElementById("notifications").appendChild(box);
+  const container = document.getElementById("notifications");
+  container.appendChild(box);
 
   box._fadeTimeout = setTimeout(() => {
     box.style.opacity = "0";
@@ -90,37 +92,6 @@ function showNotification(message, duration = 3000) {
         lastNotificationCount = 1;
       }
     }, 300);
-  }, duration);
-
-  lastNotificationBox = box;
-  lastNotificationText = message;
-  lastNotificationCount = 1;
-}
-
-
-  const box = document.createElement("div");
-  box.textContent = message;
-  box.style.background = "linear-gradient(#d91012, #710809)";
-  box.style.backgroundClip = "text";
-  box.style.webkitTextFillColor = "transparent";
-  box.style.fontFamily = "Merriweather";
-  box.style.fontSize = "20px";
-  box.style.transition = "opacity 0.3s";
-  box.style.opacity = "1";
-  box.style.textAlign = "right";
-  box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
-
-  const container = document.getElementById("notifications");
-  container.appendChild(box);
-
-  box._fadeTimeout = setTimeout(() => {
-    box.style.opacity = "0";
-    setTimeout(() => box.remove(), 300);
-    if (lastNotificationBox === box) {
-      lastNotificationBox = null;
-      lastNotificationText = null;
-      lastNotificationCount = 1;
-    }
   }, duration);
 
   lastNotificationText = message;
