@@ -72,6 +72,9 @@ display: block;
   justify-content: center;
   align-items: center;
   color: white;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 #totalCost {
   position: fixed;
