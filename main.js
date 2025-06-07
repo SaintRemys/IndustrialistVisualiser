@@ -1,9 +1,12 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 
-console.log('CSS display size:', canvas.offsetWidth, 'x', canvas.offsetHeight);
-console.log('Internal resolution:', canvas.width, 'x', canvas.height);
-console.log('Should match?', canvas.offsetWidth === canvas.width, canvas.offsetHeight === canvas.height);
+window.addEventListener('load', () => {
+  console.log('CSS computed size:', canvas.offsetWidth, 'x', canvas.offsetHeight);
+  canvas.width = canvas.offsetWidth; 
+  canvas.height = canvas.offsetHeight;
+  drawGrid();
+});
 
 let offsetX = 0, offsetY = 0;
 let zoom = 1;
@@ -254,9 +257,7 @@ document.addEventListener("keydown", e => {
 });
 
 window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth - 200;
-  canvas.height = window.innerHeight;
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
   drawGrid();
 });
-
-drawGrid();
