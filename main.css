@@ -12,6 +12,7 @@
   height: 60px;
   transition: border 0.2s ease, transform 0.3s ease;
   transform-origin: center bottom;
+  pointer-events: auto;
 }
 
 .mode-btn:hover {
@@ -67,14 +68,13 @@ display: block;
   right: 0;
   bottom: 0;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   background: none;
   border: none;
   box-shadow: none;
+  pointer-events: none;
 }
 #totalCost {
   position: fixed;
