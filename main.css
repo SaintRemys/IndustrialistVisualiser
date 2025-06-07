@@ -15,6 +15,7 @@
   transition: border 0.2s ease, transform 0.3s ease;
   transform-origin: center bottom;
   pointer-events: auto;
+  position: relative;
 }
 
 .mode-btn:hover {
@@ -37,10 +38,10 @@
   background: linear-gradient(45deg, #790000, #e40603);
   border-radius: inherit;
   z-index: -1;
-  width: 57px;
-  height: 57px;
-  text-align: center;
-  vertical-align: middle;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
 }
 
 .mode-btn.active:hover {
