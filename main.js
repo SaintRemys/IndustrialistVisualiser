@@ -24,7 +24,6 @@ let mouseWorldY = 0;
 let previewX = 0;
 let previewY = 0;
 
-// Delete mode variables
 let highlightedItem = null;
 
 const GRID_SIZE = 50;
@@ -98,7 +97,6 @@ function drawGrid() {
   }
 
   for (const item of placedItems) {
-    // Check if this item is highlighted for deletion
     const isHighlighted = highlightedItem === item;
     
     ctx.fillStyle = isHighlighted ? "#ff4444" : "#2d2d2d";
@@ -222,7 +220,6 @@ canvas.addEventListener("click", e => {
     const clickedItem = getItemAt(mouseWorldX, mouseWorldY);
     
     if (highlightedItem === clickedItem && clickedItem !== null) {
-      // Second click on same item - delete it
       const itemIndex = placedItems.indexOf(clickedItem);
       if (itemIndex > -1) {
         totalCost -= clickedItem.price;
@@ -231,7 +228,6 @@ canvas.addEventListener("click", e => {
       }
       highlightedItem = null;
     } else {
-      // First click or click on different item - highlight it
       highlightedItem = clickedItem;
     }
     
@@ -286,7 +282,6 @@ document.querySelectorAll(".mode-btn").forEach(btn => {
     document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     
-    // Clear highlight when switching modes
     highlightedItem = null;
     
     drawGrid();
@@ -301,7 +296,6 @@ document.addEventListener("keydown", e => {
       b.classList.toggle("active", b.dataset.mode === currentMode);
     });
     
-    // Clear highlight when switching modes
     highlightedItem = null;
     
     drawGrid();
@@ -311,8 +305,7 @@ document.addEventListener("keydown", e => {
     calculatePreviewPosition();
     drawGrid();
   }
-  
-  // ESC key to clear highlight
+
   if (e.key === "Escape" && currentMode === "delete") {
     highlightedItem = null;
     drawGrid();
