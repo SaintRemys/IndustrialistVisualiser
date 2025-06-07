@@ -28,7 +28,18 @@
 </div>
 
 <canvas id="gridCanvas"></canvas>
-<div id="notifications" style="position: fixed; bottom: 50px; right: 12px; z-index: 9999; width: 500px; height: 400px; align-content: flex-end;"></div>
+<div id="notifications" style="
+  position: fixed;
+  bottom: 50px;
+  right: 12px;
+  z-index: 9999;
+  width: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  pointer-events: none;
+"></div>
+
 <div id="toolbar">
   <button class="mode-btn active" data-mode="build">
     <img src="https://tr.rbxcdn.com/180DAY-da120354fae3e96dc3f38582d9729c04/420/420/Image/Png/noFilter" alt="Build">
