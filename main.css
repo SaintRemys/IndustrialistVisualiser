@@ -41,6 +41,10 @@
   background: linear-gradient(45deg, #790000, #e40603);
   border-radius: inherit;
   z-index: -1;
+  width: 58px;
+  height: 58px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 html, body {
