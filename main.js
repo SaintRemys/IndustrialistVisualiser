@@ -59,22 +59,22 @@ function getItemAt(worldX, worldY) {
 
 function calculatePreviewPosition() {
   if (!currentItem) return;
-  const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
 
-  const gridMouseX = mouseWorldX / GRID_SIZE;
-  const gridMouseY = mouseWorldY / GRID_SIZE;
+  // Always round mouse position to nearest whole grid cell
+  const gridMouseX = Math.round(mouseWorldX / GRID_SIZE);
+  const gridMouseY = Math.round(mouseWorldY / GRID_SIZE);
 
-  const snappedX = Math.round(gridMouseX);
-  const snappedY = Math.round(gridMouseY);
-  
-  if (previewRotation % 180 === 0) {
-    previewX = Math.floor(snappedX - currentItem.width / 2);
-    previewY = Math.floor(snappedY - currentItem.height / 2);
-  } else {
-    previewX = Math.floor(snappedX - currentItem.height / 2);
-    previewY = Math.floor(snappedY - currentItem.width / 2);
-  }
+  const rot = ((previewRotation % 360) + 360) % 360;
+  const isVertical = rot === 90 || rot === 270;
+
+  const itemW = isVertical ? currentItem.height : currentItem.width;
+  const itemH = isVertical ? currentItem.width : currentItem.height;
+
+  // Use current mouse center and adjust to keep item centered correctly
+  previewX = gridMouseX - Math.floor(itemW / 2);
+  previewY = gridMouseY - Math.floor(itemH / 2);
 }
+
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
