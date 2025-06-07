@@ -39,7 +39,7 @@ html, body {
 }
 #sidebar {
   position: fixed;
-  left: 0; top: 0; bottom: 60px;
+  left: 0; top: 0; bottom: 0;
   width: 200px;
   overflow-y: auto;
   background: #ddd;
