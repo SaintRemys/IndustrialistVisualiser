@@ -158,25 +158,23 @@ function drawGrid() {
     ctx.shadowBlur = 0;
     
     // Draw rotation indicator (small arrow)
-    if (previewRotation !== 0) {
-      const centerX = px + (w * GRID_SIZE) / 2;
-      const centerY = py + (h * GRID_SIZE) / 2;
-      const arrowSize = 10 / zoom;
-      
-      ctx.save();
-      ctx.translate(centerX, centerY);
-      ctx.rotate(previewRotation * Math.PI / 180);
-      ctx.strokeStyle = "#00ccff";
-      ctx.lineWidth = 2 / zoom;
-      ctx.beginPath();
-      ctx.moveTo(-arrowSize, 0);
-      ctx.lineTo(arrowSize, 0);
-      ctx.moveTo(arrowSize - 3/zoom, -3/zoom);
-      ctx.lineTo(arrowSize, 0);
-      ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
-      ctx.stroke();
-      ctx.restore();
-    }
+    const centerX = px + (w * GRID_SIZE) / 2;
+    const centerY = py + (h * GRID_SIZE) / 2;
+    const arrowSize = 10 / zoom;
+    
+    ctx.save();
+    ctx.translate(centerX, centerY);
+    ctx.rotate(previewRotation * Math.PI / 180);
+    ctx.strokeStyle = "#00ccff";
+    ctx.lineWidth = 2 / zoom;
+    ctx.beginPath();
+    ctx.moveTo(-arrowSize, 0);
+    ctx.lineTo(arrowSize, 0);
+    ctx.moveTo(arrowSize - 3/zoom, -3/zoom);
+    ctx.lineTo(arrowSize, 0);
+    ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
+    ctx.stroke();
+    ctx.restore();
     
     ctx.restore();
   }
