@@ -162,6 +162,10 @@ function drawGrid() {
       ctx.fillText(lines[i].trim(), x, startY + i * lineHeight);
     }
   }
+    const maxTextWidth = item.width * GRID_SIZE - 6;
+    const lineHeight = 14 / zoom;
+    drawWrappedText(ctx, item.name, centerX, centerY, maxTextWidth, lineHeight);
+
     ctx.textAlign = "start";
     ctx.textBaseline = "alphabetic";
   }
