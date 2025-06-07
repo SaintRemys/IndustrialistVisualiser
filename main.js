@@ -41,8 +41,8 @@ function isOccupied(x, y, w, h) {
 
 function calculatePreviewPosition() {
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  previewX = Math.floor(mouseWorldX / 50 - w / 2 + 0.5);
-  previewY = Math.floor(mouseWorldY / 50 - h / 2 + 0.5);
+  previewX = Math.round(mouseWorldX / 50 - w / 2);
+  previewY = Math.round(mouseWorldY / 50 - h / 2);
 }
 
 function drawGrid() {
