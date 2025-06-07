@@ -47,10 +47,6 @@ let lastNotificationText = null;
 let lastNotificationBox = null;
 let lastNotificationCount = 1;
 
-let lastNotificationBox = null;
-let lastNotificationText = null;
-let lastNotificationCount = 1;
-
 function showNotification(message, duration = 3000) {
   if (lastNotificationText === message && lastNotificationBox) {
     lastNotificationCount++;
