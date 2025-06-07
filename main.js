@@ -39,20 +39,17 @@ function isOccupied(x, y, w, h) {
   return false;
 }
 
-// Calculate preview top-left so that mouse is centered on the object
 function calculatePreviewPosition() {
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  previewX = Math.floor(mouseWorldX / 50 - w / 2);
-  previewY = Math.floor(mouseWorldY / 50 - h / 2);
+  previewX = Math.floor(mouseWorldX / 50 - w / 2 + 0.5);
+  previewY = Math.floor(mouseWorldY / 50 - h / 2 + 0.5);
 }
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.save();
-  const gridSize = 50;
-  ctx.translate(offsetX - gridSize, offsetY);
+  ctx.translate(offsetX, offsetY);
   ctx.scale(zoom, zoom);
-
 
   const gridSize = 50;
   const cols = canvas.width / zoom / gridSize + 2;
@@ -75,7 +72,6 @@ function drawGrid() {
     ctx.stroke();
   }
 
-  // Draw placed items
   for (let item of placedItems) {
     ctx.fillStyle = "orange";
     ctx.fillRect(item.x * gridSize, item.y * gridSize, item.width * gridSize, item.height * gridSize);
@@ -83,7 +79,6 @@ function drawGrid() {
     ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
   }
 
-  // Draw preview item with transparency
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
