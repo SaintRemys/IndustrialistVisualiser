@@ -68,29 +68,27 @@ function calculatePreviewPosition() {
   const w = currentItem.width;
   const h = currentItem.height;
 
-  let dx = 0, dy = 0;
+  let originX = 0;
+  let originY = 0;
 
-  if (w === 2 && h === 1) {
-    if (rot === 0) [dx, dy] = [0, 0];
-    if (rot === 90) [dx, dy] = [0, -1];
-    if (rot === 180) [dx, dy] = [-1, -1];
-    if (rot === 270) [dx, dy] = [-1, 0];
-  } else if (w === 1 && h === 2) {
-    if (rot === 0) [dx, dy] = [0, 0];
-    if (rot === 90) [dx, dy] = [1, 0];
-    if (rot === 180) [dx, dy] = [1, -1];
-    if (rot === 270) [dx, dy] = [0, -1];
-  } else {
-    // fallback for other sizes (center-based)
-    const [rw, rh] = getRotatedSize(w, h, rot);
-    previewX = anchorGridX - Math.floor(rw / 2);
-    previewY = anchorGridY - Math.floor(rh / 2);
-    return;
+  if (rot === 0) {
+    originX = anchorGridX;
+    originY = anchorGridY;
+  } else if (rot === 90) {
+    originX = anchorGridX - (h - 1);
+    originY = anchorGridY;
+  } else if (rot === 180) {
+    originX = anchorGridX - (w - 1);
+    originY = anchorGridY - (h - 1);
+  } else if (rot === 270) {
+    originX = anchorGridX;
+    originY = anchorGridY - (w - 1);
   }
 
-  previewX = anchorGridX + dx;
-  previewY = anchorGridY + dy;
+  previewX = originX;
+  previewY = originY;
 }
+
 
 
 function drawGrid() {
