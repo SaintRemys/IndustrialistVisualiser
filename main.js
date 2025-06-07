@@ -16,6 +16,11 @@ let previewRotation = 0;
 let mouseGridX = 0;
 let mouseGridY = 0;
 
+function getRotatedSize(w, h, rot) {
+  rot = ((rot % 360) + 360) % 360;
+  return rot % 180 === 0 ? [w, h] : [h, w];
+}
+
 function isOccupied(x, y, width, height) {
   for (let item of placedItems) {
     for (let dx = 0; dx < width; dx++) {
@@ -76,11 +81,6 @@ function drawGrid() {
   }
 
   ctx.restore();
-}
-
-function getRotatedSize(w, h, rot) {
-  rot %= 360;
-  return rot % 180 === 0 ? [w, h] : [h, w];
 }
 
 canvas.addEventListener("mousedown", e => {
