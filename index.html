@@ -3,15 +3,15 @@
 <head>
   <link rel="stylesheet" href="main.css">
   <meta charset="UTF-8">
-  <title>Grid Builder</title>
+  <title>Industrialist Visualizer</title>
 </head>
 <body>
 <div id="sidebar">
-  <div class="item" data-name="Solar Panel" data-price="50">
+  <div class="item" data-name="Solar Panel" data-price="50" data-width="2" data-height="1">
     <img src="https://via.placeholder.com/150x80?text=Solar+Panel">
     <div><strong>Solar Panel</strong><br>$50</div>
   </div>
-  <div class="item" data-name="Battery" data-price="100">
+  <div class="item" data-name="Battery" data-price="100" data-width="1" data-height="1">
     <img src="https://via.placeholder.com/150x80?text=Battery">
     <div><strong>Battery</strong><br>$100</div>
   </div>
@@ -40,7 +40,7 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth - 200;
-canvas.height = window.innerHeight - 60;
+canvas.height = window.innerHeight;
 
 let offsetX = 0, offsetY = 0;
 let zoom = 1;
@@ -80,7 +80,7 @@ function drawGrid() {
 
   for (let item of placedItems) {
     ctx.fillStyle = "orange";
-    ctx.fillRect(item.x * gridSize, item.y * gridSize, gridSize, gridSize);
+    ctx.fillRect(item.x * gridSize, item.y * gridSize, item.width * gridSize, item.height * gridSize);
     ctx.fillStyle = "black";
     ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
   }
@@ -126,7 +126,14 @@ canvas.addEventListener("click", e => {
   const mouseY = e.clientY;
   const worldX = Math.floor((mouseX - offsetX) / (50 * zoom));
   const worldY = Math.floor((mouseY - offsetY) / (50 * zoom));
-  placedItems.push({ x: worldX, y: worldY, name: currentItem.name, price: currentItem.price });
+  placedItems.push({
+    x: worldX,
+    y: worldY,
+    name: currentItem.name,
+    price: currentItem.price,
+    width: currentItem.width,
+    height: currentItem.height
+  });
   totalCost += currentItem.price;
   document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
   drawGrid();
@@ -137,6 +144,8 @@ document.querySelectorAll(".item").forEach(item => {
     currentItem = {
       name: item.dataset.name,
       price: parseInt(item.dataset.price),
+      width: parseInt(item.dataset.width),
+      height: parseInt(item.dataset.height)
     };
   });
 });
@@ -161,7 +170,7 @@ document.addEventListener("keydown", e => {
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth - 200;
-  canvas.height = window.innerHeight - 60;
+  canvas.height = window.innerHeight;
   drawGrid();
 });
 
