@@ -2,9 +2,107 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Test</title>
+  <title>Zoomable Grid</title>
+  <style>
+    body, html { margin: 0; overflow: hidden; }
+    canvas { display: block; background: #f0f0f0; }
+  </style>
 </head>
 <body>
-  <h1>test</h1>
+<canvas id="grid"></canvas>
+<script>
+const canvas = document.getElementById("grid");
+const ctx = canvas.getContext("2d");
+
+let width = window.innerWidth;
+let height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+
+let offsetX = 0, offsetY = 0;
+let zoom = 1;
+let isDragging = false;
+let lastX, lastY;
+
+function drawGrid() {
+  ctx.clearRect(0, 0, width, height);
+  ctx.save();
+  ctx.translate(offsetX, offsetY);
+  ctx.scale(zoom, zoom);
+
+  const gridSize = 50;
+  const cols = Math.ceil(width / (gridSize * zoom)) + 2;
+  const rows = Math.ceil(height / (gridSize * zoom)) + 2;
+  const startX = -offsetX / zoom - 1;
+  const startY = -offsetY / zoom - 1;
+
+  ctx.strokeStyle = "#ccc";
+  for (let x = Math.floor(startX / gridSize) * gridSize; x < startX + cols * gridSize; x += gridSize) {
+    ctx.beginPath();
+    ctx.moveTo(x, startY);
+    ctx.lineTo(x, startY + rows * gridSize);
+    ctx.stroke();
+  }
+
+  for (let y = Math.floor(startY / gridSize) * gridSize; y < startY + rows * gridSize; y += gridSize) {
+    ctx.beginPath();
+    ctx.moveTo(startX, y);
+    ctx.lineTo(startX + cols * gridSize, y);
+    ctx.stroke();
+  }
+
+  ctx.restore();
+}
+
+drawGrid();
+
+canvas.addEventListener("mousedown", e => {
+  isDragging = true;
+  lastX = e.clientX;
+  lastY = e.clientY;
+});
+
+canvas.addEventListener("mousemove", e => {
+  if (isDragging) {
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    offsetX += dx;
+    offsetY += dy;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    drawGrid();
+  }
+});
+
+canvas.addEventListener("mouseup", () => isDragging = false);
+canvas.addEventListener("mouseleave", () => isDragging = false);
+
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  const zoomFactor = 1.1;
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  const wheel = e.deltaY < 0 ? 1 : -1;
+  const zoomAmount = wheel > 0 ? zoomFactor : 1 / zoomFactor;
+
+  const worldX = (mouseX - offsetX) / zoom;
+  const worldY = (mouseY - offsetY) / zoom;
+
+  zoom *= zoomAmount;
+
+  offsetX = mouseX - worldX * zoom;
+  offsetY = mouseY - worldY * zoom;
+
+  drawGrid();
+});
+
+window.addEventListener("resize", () => {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+  drawGrid();
+});
+</script>
 </body>
 </html>
