@@ -42,10 +42,8 @@ function isOccupied(x, y, w, h) {
 // Calculate preview top-left so that mouse is centered on the object
 function calculatePreviewPosition() {
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  // Convert mouseWorldX/Y from pixels to grid units (grid size 50)
-  // We want the mouse to be at the CENTER of the object, so top-left = mouse - half size
-  previewX = mouseWorldX / 50 - w / 2;
-  previewY = mouseWorldY / 50 - h / 2;
+  previewX = Math.floor(mouseWorldX / 50 - w / 2);
+  previewY = Math.floor(mouseWorldY / 50 - h / 2);
 }
 
 function drawGrid() {
