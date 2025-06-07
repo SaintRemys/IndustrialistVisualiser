@@ -67,7 +67,7 @@ display: block;
   bottom: 0;
   height: 60px;
   background: #333;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   color: white;
