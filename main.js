@@ -1,4 +1,4 @@
-const canvas = document.getElementById("gridCanvas");More actions
+const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth - 200;
 canvas.height = window.innerHeight;
