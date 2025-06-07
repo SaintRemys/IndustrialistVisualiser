@@ -108,7 +108,7 @@ function drawGrid() {
 
     // Draw item name
     ctx.fillStyle = "black";
-    ctx.font = `${12/zoom}px Arial`;
+    ctx.font = "12px Arial";
     const textX = px + 5;
     const textY = py + 15/zoom;
     ctx.fillText(currentItem.name, textX, textY);
