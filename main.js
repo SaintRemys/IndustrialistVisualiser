@@ -47,6 +47,10 @@ let lastNotificationText = null;
 let lastNotificationBox = null;
 let lastNotificationCount = 1;
 
+let lastNotificationBox = null;
+let lastNotificationText = null;
+let lastNotificationCount = 1;
+
 function showNotification(message, duration = 3000) {
   if (lastNotificationText === message && lastNotificationBox) {
     lastNotificationCount++;
@@ -56,13 +60,47 @@ function showNotification(message, duration = 3000) {
     lastNotificationBox.style.opacity = "1";
     lastNotificationBox._fadeTimeout = setTimeout(() => {
       lastNotificationBox.style.opacity = "0";
-      setTimeout(() => lastNotificationBox.remove(), 300);
-      lastNotificationBox = null;
-      lastNotificationText = null;
-      lastNotificationCount = 1;
+      setTimeout(() => {
+        lastNotificationBox.remove();
+        lastNotificationBox = null;
+        lastNotificationText = null;
+        lastNotificationCount = 1;
+      }, 300);
     }, duration);
     return;
   }
+
+  const box = document.createElement("div");
+  box.textContent = message;
+  box.style.background = "linear-gradient(#d91012, #710809)";
+  box.style.backgroundClip = "text";
+  box.style.webkitTextFillColor = "transparent";
+  box.style.fontFamily = "Merriweather";
+  box.style.fontSize = "20px";
+  box.style.transition = "opacity 0.3s";
+  box.style.opacity = "1";
+  box.style.textAlign = "right";
+  box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
+
+  document.getElementById("notifications").appendChild(box);
+
+  box._fadeTimeout = setTimeout(() => {
+    box.style.opacity = "0";
+    setTimeout(() => {
+      box.remove();
+      if (lastNotificationBox === box) {
+        lastNotificationBox = null;
+        lastNotificationText = null;
+        lastNotificationCount = 1;
+      }
+    }, 300);
+  }, duration);
+
+  lastNotificationBox = box;
+  lastNotificationText = message;
+  lastNotificationCount = 1;
+}
+
 
   const box = document.createElement("div");
   box.textContent = message;
