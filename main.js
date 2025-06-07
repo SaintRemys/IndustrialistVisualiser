@@ -64,8 +64,16 @@ function calculatePreviewPosition() {
   const gridMouseX = mouseWorldX / GRID_SIZE;
   const gridMouseY = mouseWorldY / GRID_SIZE;
 
-  previewX = Math.floor(gridMouseX - w / 2);
-  previewY = Math.floor(gridMouseY - h / 2);
+  const snappedX = Math.round(gridMouseX);
+  const snappedY = Math.round(gridMouseY);
+  
+  if (previewRotation % 180 === 0) {
+    previewX = Math.floor(snappedX - currentItem.width / 2);
+    previewY = Math.floor(snappedY - currentItem.height / 2);
+  } else {
+    previewX = Math.floor(snappedX - currentItem.height / 2);
+    previewY = Math.floor(snappedY - currentItem.width / 2);
+  }
 }
 
 function drawGrid() {
@@ -107,7 +115,7 @@ function drawGrid() {
     ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
     
     ctx.fillStyle = "white";
-    ctx.font = `12px Arial`;
+    ctx.font = `12px Merriweather`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
 
@@ -137,7 +145,7 @@ function drawGrid() {
     ctx.strokeRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
 
     ctx.fillStyle = "black";
-    ctx.font = "12px Arial";
+    ctx.font = "12px Merriweather";
     const textX = px + 5;
     const textY = py + 15/zoom;
     ctx.fillText(currentItem.name, textX, textY);
