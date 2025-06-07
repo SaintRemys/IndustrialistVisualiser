@@ -7,32 +7,35 @@ let offsetX = 0, offsetY = 0;
 let zoom = 1;
 let isDragging = false;
 let lastX, lastY;
+
 let placedItems = [];
 let currentItem = null;
 let currentMode = "build";
 let totalCost = 0;
 
-let previewRotation = 0; // degrees, 0/90/180/270
+let previewRotation = 0; // 0,90,180,270
 let mouseWorldX = 0;
 let mouseWorldY = 0;
-let previewX = 0; // grid coordinates of preview top-left
+let previewX = 0; // grid coords (top-left of preview)
 let previewY = 0;
+
+const GRID_SIZE = 50;
 
 function getRotatedSize(w, h, rot) {
   rot = rot % 360;
-  return rot === 0 || rot === 180 ? [w, h] : [h, w];
+  return (rot === 0 || rot === 180) ? [w, h] : [h, w];
 }
 
-// Check if any cell in area (x,y,w,h) is occupied
 function isOccupied(x, y, w, h) {
-  for (let item of placedItems) {
+  for (const item of placedItems) {
     for (let dx = 0; dx < w; dx++) {
       for (let dy = 0; dy < h; dy++) {
-        for (let ix = 0; ix < item.width; ix++) {
-          for (let iy = 0; iy < item.height; iy++) {
-            if (x + dx === item.x + ix && y + dy === item.y + iy) return true;
-          }
-        }
+        if (
+          x + dx >= item.x &&
+          x + dx < item.x + item.width &&
+          y + dy >= item.y &&
+          y + dy < item.y + item.height
+        ) return true;
       }
     }
   }
@@ -40,9 +43,12 @@ function isOccupied(x, y, w, h) {
 }
 
 function calculatePreviewPosition() {
+  if (!currentItem) return;
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  previewX = Math.round(mouseWorldX / 50 - w / 2);
-  previewY = Math.round(mouseWorldY / 50 - h / 2);
+  
+  // Center preview on mouse grid cell
+  previewX = Math.floor(mouseWorldX / GRID_SIZE - w / 2 + 0.5);
+  previewY = Math.floor(mouseWorldY / GRID_SIZE - h / 2 + 0.5);
 }
 
 function drawGrid() {
@@ -51,40 +57,48 @@ function drawGrid() {
   ctx.translate(offsetX, offsetY);
   ctx.scale(zoom, zoom);
 
-  const gridSize = 50;
-  const cols = canvas.width / zoom / gridSize + 2;
-  const rows = canvas.height / zoom / gridSize + 2;
-  const startX = -offsetX / zoom - 1;
-  const startY = -offsetY / zoom - 1;
+  // Draw grid lines
+  const cols = Math.ceil(canvas.width / zoom / GRID_SIZE) + 2;
+  const rows = Math.ceil(canvas.height / zoom / GRID_SIZE) + 2;
+  const startX = -offsetX / zoom - GRID_SIZE;
+  const startY = -offsetY / zoom - GRID_SIZE;
 
   ctx.strokeStyle = "#ccc";
-  for (let x = Math.floor(startX / gridSize) * gridSize; x < startX + cols * gridSize; x += gridSize) {
+  for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
     ctx.beginPath();
     ctx.moveTo(x, startY);
-    ctx.lineTo(x, startY + rows * gridSize);
+    ctx.lineTo(x, startY + rows * GRID_SIZE);
     ctx.stroke();
   }
-
-  for (let y = Math.floor(startY / gridSize) * gridSize; y < startY + rows * gridSize; y += gridSize) {
+  for (let y = Math.floor(startY / GRID_SIZE) * GRID_SIZE; y < startY + rows * GRID_SIZE; y += GRID_SIZE) {
     ctx.beginPath();
     ctx.moveTo(startX, y);
-    ctx.lineTo(startX + cols * gridSize, y);
+    ctx.lineTo(startX + cols * GRID_SIZE, y);
     ctx.stroke();
   }
 
-  for (let item of placedItems) {
+  // Draw placed items
+  for (const item of placedItems) {
     ctx.fillStyle = "orange";
-    ctx.fillRect(item.x * gridSize, item.y * gridSize, item.width * gridSize, item.height * gridSize);
+    ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
     ctx.fillStyle = "black";
-    ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
+    ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20);
   }
 
+  // Draw preview with rotation about its center
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-    ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
-    ctx.fillRect(previewX * gridSize, previewY * gridSize, w * gridSize, h * gridSize);
+    const px = previewX * GRID_SIZE;
+    const py = previewY * GRID_SIZE;
+
+    ctx.save();
+    ctx.translate(px + (w * GRID_SIZE) / 2, py + (h * GRID_SIZE) / 2);
+    ctx.rotate(previewRotation * Math.PI / 180);
+    ctx.fillStyle = isOccupied(previewX, previewY, w, h) ? "rgba(255,0,0,0.5)" : "rgba(255,165,0,0.5)";
+    ctx.fillRect(- (w * GRID_SIZE) / 2, - (h * GRID_SIZE) / 2, w * GRID_SIZE, h * GRID_SIZE);
     ctx.strokeStyle = "black";
-    ctx.strokeRect(previewX * gridSize, previewY * gridSize, w * gridSize, h * gridSize);
+    ctx.strokeRect(- (w * GRID_SIZE) / 2, - (h * GRID_SIZE) / 2, w * GRID_SIZE, h * GRID_SIZE);
+    ctx.restore();
   }
 
   ctx.restore();
@@ -119,6 +133,7 @@ canvas.addEventListener("mousemove", e => {
 
 canvas.addEventListener("click", e => {
   if (currentMode !== "build" || !currentItem) return;
+
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
   if (isOccupied(previewX, previewY, w, h)) return;
 
@@ -145,6 +160,7 @@ document.querySelectorAll(".item").forEach(item => {
       height: parseInt(item.dataset.height)
     };
     previewRotation = 0;
+    calculatePreviewPosition();
     drawGrid();
   });
 });
