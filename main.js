@@ -46,10 +46,15 @@ function calculatePreviewPosition() {
   if (!currentItem) return;
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
   
-  // Center preview on mouse grid cell
-  previewX = Math.floor(mouseWorldX / GRID_SIZE - w / 2 + 0.5);
-  previewY = Math.floor(mouseWorldY / GRID_SIZE - h / 2 + 0.5);
+  // Calculate the exact grid position where mouse is
+  const mouseGridX = mouseWorldX / GRID_SIZE;
+  const mouseGridY = mouseWorldY / GRID_SIZE;
+  
+  // Preview top-left so the preview is centered on mouse grid point
+  previewX = Math.floor(mouseGridX - w / 2 + 0.5);
+  previewY = Math.floor(mouseGridY - h / 2 + 0.5);
 }
+
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
