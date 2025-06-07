@@ -1,4 +1,3 @@
-// main.js
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth - 200;
@@ -12,6 +11,27 @@ let placedItems = [];
 let currentItem = null;
 let currentMode = "build";
 let totalCost = 0;
+
+let previewRotation = 0;
+let mouseGridX = 0;
+let mouseGridY = 0;
+
+function isOccupied(x, y, width, height) {
+  for (let item of placedItems) {
+    for (let dx = 0; dx < width; dx++) {
+      for (let dy = 0; dy < height; dy++) {
+        for (let idx = 0; idx < item.width; idx++) {
+          for (let idy = 0; idy < item.height; idy++) {
+            if ((x + dx === item.x + idx) && (y + dy === item.y + idy)) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+  }
+  return false;
+}
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -47,7 +67,20 @@ function drawGrid() {
     ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
   }
 
+  if (currentMode === "build" && currentItem) {
+    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+    ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
+    ctx.fillRect(mouseGridX * gridSize, mouseGridY * gridSize, w * gridSize, h * gridSize);
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(mouseGridX * gridSize, mouseGridY * gridSize, w * gridSize, h * gridSize);
+  }
+
   ctx.restore();
+}
+
+function getRotatedSize(w, h, rot) {
+  rot %= 360;
+  return rot % 180 === 0 ? [w, h] : [h, w];
 }
 
 canvas.addEventListener("mousedown", e => {
@@ -63,38 +96,27 @@ canvas.addEventListener("mousemove", e => {
     offsetY += e.clientY - lastY;
     lastX = e.clientX;
     lastY = e.clientY;
-    drawGrid();
   }
-});
 
-canvas.addEventListener("wheel", e => {
-  e.preventDefault();
-  const zoomFactor = 1.1;
-  const mouseX = e.clientX - 200;
-  const mouseY = e.clientY;
-  const wheel = e.deltaY < 0 ? 1 : -1;
-  const zoomAmount = wheel > 0 ? zoomFactor : 1 / zoomFactor;
-  const worldX = (mouseX - offsetX) / zoom;
-  const worldY = (mouseY - offsetY) / zoom;
-  zoom *= zoomAmount;
-  offsetX = mouseX - worldX * zoom;
-  offsetY = mouseY - worldY * zoom;
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left - offsetX) / zoom;
+  const my = (e.clientY - rect.top - offsetY) / zoom;
+  mouseGridX = Math.floor(mx / 50);
+  mouseGridY = Math.floor(my / 50);
   drawGrid();
 });
 
 canvas.addEventListener("click", e => {
   if (currentMode !== "build" || !currentItem) return;
-  const mouseX = e.clientX - 200;
-  const mouseY = e.clientY;
-  const worldX = Math.floor((mouseX - offsetX) / (50 * zoom));
-  const worldY = Math.floor((mouseY - offsetY) / (50 * zoom));
+  const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+  if (isOccupied(mouseGridX, mouseGridY, w, h)) return;
   placedItems.push({
-    x: worldX,
-    y: worldY,
+    x: mouseGridX,
+    y: mouseGridY,
     name: currentItem.name,
     price: currentItem.price,
-    width: currentItem.width,
-    height: currentItem.height
+    width: w,
+    height: h
   });
   totalCost += currentItem.price;
   document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
@@ -109,6 +131,8 @@ document.querySelectorAll(".item").forEach(item => {
       width: parseInt(item.dataset.width),
       height: parseInt(item.dataset.height)
     };
+    previewRotation = 0;
+    drawGrid();
   });
 });
 
@@ -117,6 +141,7 @@ document.querySelectorAll(".mode-btn").forEach(btn => {
     currentMode = btn.dataset.mode;
     document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
+    drawGrid();
   });
 });
 
@@ -127,6 +152,11 @@ document.addEventListener("keydown", e => {
     document.querySelectorAll(".mode-btn").forEach(b => {
       b.classList.toggle("active", b.dataset.mode === currentMode);
     });
+    drawGrid();
+  }
+  if (e.key.toLowerCase() === "r" && currentItem) {
+    previewRotation = (previewRotation + 90) % 360;
+    drawGrid();
   }
 });
 
