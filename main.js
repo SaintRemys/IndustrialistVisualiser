@@ -1,4 +1,4 @@
-const canvas = document.getElementById("gridCanvas");
+const canvas = document.getElementById("gridCanvas");More actions
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth - 200;
 canvas.height = window.innerHeight;
@@ -39,15 +39,15 @@ function isOccupied(x, y, w, h) {
 
 function calculatePreviewPosition() {
   if (!currentItem) return;
-  
+
   // Get rotated dimensions
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  
+
   // Calculate grid position based on mouse position
   // We want the preview to be centered on the mouse cursor
   const gridMouseX = mouseWorldX / GRID_SIZE;
   const gridMouseY = mouseWorldY / GRID_SIZE;
-  
+
   // Center the preview on the mouse
   previewX = Math.floor(gridMouseX - w / 2);
   previewY = Math.floor(gridMouseY - h / 2);
@@ -55,69 +55,29 @@ function calculatePreviewPosition() {
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Fill background with dark color
-  ctx.fillStyle = "#2a2a2a";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
   ctx.save();
-  ctx.translate(Math.round(offsetX), Math.round(offsetY));
-  // Lock aspect ratio by using the same zoom value for both X and Y
+  ctx.translate(offsetX, offsetY);
   ctx.scale(zoom, zoom);
-  
-  // Ensure pixel-perfect rendering
-  ctx.imageSmoothingEnabled = false;
 
-  // Calculate grid bounds
+  // Draw grid lines
   const cols = Math.ceil(canvas.width / zoom / GRID_SIZE) + 2;
   const rows = Math.ceil(canvas.height / zoom / GRID_SIZE) + 2;
   const startX = -offsetX / zoom - GRID_SIZE;
   const startY = -offsetY / zoom - GRID_SIZE;
-  
-  // Draw alternating grid cells (like the image)
-  const gridStartX = Math.floor(startX / GRID_SIZE);
-  const gridStartY = Math.floor(startY / GRID_SIZE);
-  
-  for (let gx = gridStartX; gx < gridStartX + cols; gx++) {
-    for (let gy = gridStartY; gy < gridStartY + rows; gy++) {
-      // Lock grid squares to exact pixel boundaries
-      const x = Math.round(gx * GRID_SIZE);
-      const y = Math.round(gy * GRID_SIZE);
-      const size = Math.round(GRID_SIZE); // Ensure size is always an integer
-      
-      // Create checkerboard pattern with subtle color variations
-      const isEven = (gx + gy) % 2 === 0;
-      ctx.fillStyle = isEven ? "#333333" : "#2d2d2d";
-      ctx.fillRect(x, y, size, size); // Use locked size for perfect squares
-      
-      // Add subtle border to each cell with pixel-perfect alignment
-      ctx.strokeStyle = "#404040";
-      ctx.lineWidth = 0.5 / zoom;
-      ctx.strokeRect(x + 0.5, y + 0.5, size - 1, size - 1); // Offset for crisp lines
-    }
-  }
-  
-  // Draw major grid lines every 5 cells (optional - for better navigation)
-  ctx.strokeStyle = "#555555";
-  ctx.lineWidth = 1.5 / zoom;
-  
-  for (let x = Math.floor(startX / (GRID_SIZE * 5)) * (GRID_SIZE * 5); 
-       x < startX + cols * GRID_SIZE; 
-       x += GRID_SIZE * 5) {
-    const lineX = Math.round(x) + 0.5; // Lock to pixel boundary
+
+  ctx.strokeStyle = "#FFFFFF";
+  ctx.lineWidth = 1 / zoom; // Keep lines thin at all zoom levels
+
+  for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
     ctx.beginPath();
-    ctx.moveTo(lineX, startY);
-    ctx.lineTo(lineX, startY + rows * GRID_SIZE);
+    ctx.moveTo(x, startY);
+    ctx.lineTo(x, startY + rows * GRID_SIZE);
     ctx.stroke();
   }
-  
-  for (let y = Math.floor(startY / (GRID_SIZE * 5)) * (GRID_SIZE * 5); 
-       y < startY + rows * GRID_SIZE; 
-       y += GRID_SIZE * 5) {
-    const lineY = Math.round(y) + 0.5; // Lock to pixel boundary
+  for (let y = Math.floor(startY / GRID_SIZE) * GRID_SIZE; y < startY + rows * GRID_SIZE; y += GRID_SIZE) {
     ctx.beginPath();
-    ctx.moveTo(startX, lineY);
-    ctx.lineTo(startX + cols * GRID_SIZE, lineY);
+    ctx.moveTo(startX, y);
+    ctx.lineTo(startX + cols * GRID_SIZE, y);
     ctx.stroke();
   }
 
@@ -125,11 +85,11 @@ function drawGrid() {
   for (const item of placedItems) {
     ctx.fillStyle = "orange";
     ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    ctx.strokeStyle = "#ff8c00";
+    ctx.strokeStyle = "black";
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    
-    ctx.fillStyle = "white";
+
+    ctx.fillStyle = "black";
     ctx.font = `${14/zoom}px Arial`;
     ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20/zoom);
   }
@@ -139,40 +99,37 @@ function drawGrid() {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     const px = previewX * GRID_SIZE;
     const py = previewY * GRID_SIZE;
-    
+
     // Check if placement is valid
     const isValid = !isOccupied(previewX, previewY, w, h);
-    
+
     ctx.save();
-    
+
     // Draw the preview rectangle
-    ctx.globalAlpha = 0.7;
-    ctx.fillStyle = isValid ? "rgba(0,255,100,0.4)" : "rgba(255,50,50,0.4)";
+    ctx.fillStyle = isValid ? "rgba(0,255,0,0.3)" : "rgba(255,0,0,0.3)";
     ctx.fillRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
-    
-    ctx.globalAlpha = 1;
-    ctx.strokeStyle = isValid ? "#00ff64" : "#ff3232";
+
+    ctx.strokeStyle = isValid ? "green" : "red";
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
-    
+
     // Draw item name
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "black";
     ctx.font = `${12/zoom}px Arial`;
-    ctx.shadowColor = "black";
-    ctx.shadowBlur = 2;
     const textX = px + 5;
     const textY = py + 15/zoom;
     ctx.fillText(currentItem.name, textX, textY);
-    ctx.shadowBlur = 0;
-    
+
+    // Draw rotation indicator (small arrow)
+    if (previewRotation !== 0) {
       const centerX = px + (w * GRID_SIZE) / 2;
       const centerY = py + (h * GRID_SIZE) / 2;
       const arrowSize = 10 / zoom;
-      
+
       ctx.save();
       ctx.translate(centerX, centerY);
       ctx.rotate(previewRotation * Math.PI / 180);
-      ctx.strokeStyle = "#00ccff";
+      ctx.strokeStyle = "blue";
       ctx.lineWidth = 2 / zoom;
       ctx.beginPath();
       ctx.moveTo(-arrowSize, 0);
@@ -182,12 +139,14 @@ function drawGrid() {
       ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
       ctx.stroke();
       ctx.restore();
-    
+    }
+
     ctx.restore();
   }
 
   ctx.restore();
 }
+
 canvas.addEventListener("mousedown", e => {
   isDragging = true;
   lastX = e.clientX;
@@ -247,25 +206,25 @@ canvas.addEventListener("wheel", e => {
   const rect = canvas.getBoundingClientRect();
   const mouseX = e.clientX - rect.left;
   const mouseY = e.clientY - rect.top;
-  
+
   const wheel = e.deltaY < 0 ? 1 : -1;
   const zoomIntensity = 0.1;
   const newZoom = zoom + wheel * zoomIntensity;
-  
+
   if (newZoom > 0.1 && newZoom < 5) {
     const zoomChange = newZoom / zoom;
     offsetX = mouseX - (mouseX - offsetX) * zoomChange;
     offsetY = mouseY - (mouseY - offsetY) * zoomChange;
     zoom = newZoom;
-    
+
     // Recalculate mouse world position
     mouseWorldX = (mouseX - offsetX) / zoom;
     mouseWorldY = (mouseY - offsetY) / zoom;
-    
+
     if (currentItem) {
       calculatePreviewPosition();
     }
-    
+
     drawGrid();
   }
 });
