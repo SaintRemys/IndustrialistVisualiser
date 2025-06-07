@@ -65,7 +65,7 @@ function drawGrid() {
   const startX = -offsetX / zoom - GRID_SIZE;
   const startY = -offsetY / zoom - GRID_SIZE;
 
-  ctx.strokeStyle = "#ccc";
+  ctx.strokeStyle = "#FFFFFF";
   ctx.lineWidth = 1 / zoom; // Keep lines thin at all zoom levels
   
   for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
