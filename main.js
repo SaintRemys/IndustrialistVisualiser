@@ -43,6 +43,57 @@ function isOccupied(x, y, w, h) {
   return false;
 }
 
+let lastNotificationText = null;
+let lastNotificationBox = null;
+let lastNotificationCount = 1;
+
+function showNotification(message, duration = 3000) {
+  if (lastNotificationText === message && lastNotificationBox) {
+    lastNotificationCount++;
+    lastNotificationBox.textContent = `${message} (x${lastNotificationCount})`;
+
+    clearTimeout(lastNotificationBox._fadeTimeout);
+    lastNotificationBox.style.opacity = "1";
+    lastNotificationBox._fadeTimeout = setTimeout(() => {
+      lastNotificationBox.style.opacity = "0";
+      setTimeout(() => lastNotificationBox.remove(), 300);
+      lastNotificationBox = null;
+      lastNotificationText = null;
+      lastNotificationCount = 1;
+    }, duration);
+    return;
+  }
+
+  const box = document.createElement("div");
+  box.textContent = message;
+  box.style.background = "linear-gradient(#d91012, #710809)";
+  box.style.backgroundClip = "text";
+  box.style.webkitTextFillColor = "transparent";
+  box.style.fontFamily = "Merriweather";
+  box.style.fontSize = "20px";
+  box.style.transition = "opacity 0.3s";
+  box.style.opacity = "1";
+  box.style.textAlign = "right";
+  box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
+
+  const container = document.getElementById("notifications");
+  container.appendChild(box);
+
+  box._fadeTimeout = setTimeout(() => {
+    box.style.opacity = "0";
+    setTimeout(() => box.remove(), 300);
+    if (lastNotificationBox === box) {
+      lastNotificationBox = null;
+      lastNotificationText = null;
+      lastNotificationCount = 1;
+    }
+  }, duration);
+
+  lastNotificationText = message;
+  lastNotificationBox = box;
+  lastNotificationCount = 1;
+}
+
 function getItemAt(worldX, worldY) {
   const gridX = Math.floor(worldX / GRID_SIZE);
   const gridY = Math.floor(worldY / GRID_SIZE);
@@ -264,7 +315,8 @@ canvas.addEventListener("click", e => {
     });
 
     totalCost += currentItem.price;
-    document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+    showNotification(`+$${currentItem.price}`, 5000);
+    document.getElementById("totalCost").innerHTML = `<i>Total: $${totalCost}</i>`;
     drawGrid();
   } else if (currentMode === "delete") {
     const clickedItem = getItemAt(mouseWorldX, mouseWorldY);

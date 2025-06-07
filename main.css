@@ -119,3 +119,12 @@ canvas {
   border-radius: 8px;
   box-shadow: 0 0 5px #0003;
 }
+
+#totalCost i {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6) !important;
+  background: linear-gradient(90deg, #13c113, #0b6f0b) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-style: normal !important;
+}
