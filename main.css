@@ -44,7 +44,7 @@
   right: 3px;
   bottom: 3px;
   background: linear-gradient(to bottom, #272727, #131313);
-  border-radius: calc(inherit - 3px);
+  border-radius: 9px;
 }
 
 .mode-btn.active:hover {
