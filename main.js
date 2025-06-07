@@ -137,8 +137,31 @@ function drawGrid() {
     const centerX = item.x * GRID_SIZE + (item.width * GRID_SIZE) / 2;
     const centerY = item.y * GRID_SIZE + (item.height * GRID_SIZE) / 2;
     
-    ctx.fillText(item.name, centerX, centerY);
+    function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight) {
+    const words = text.split(" ");
+    let line = "";
+    let lines = [];
     
+    for (let n = 0; n < words.length; n++) {
+      const testLine = line + words[n] + " ";
+      const metrics = ctx.measureText(testLine);
+      const testWidth = metrics.width;
+      if (testWidth > maxWidth && n > 0) {
+        lines.push(line);
+        line = words[n] + " ";
+      } else {
+        line = testLine;
+      }
+    }
+    lines.push(line);
+  
+    const totalHeight = lines.length * lineHeight;
+    let startY = y - totalHeight / 2 + lineHeight / 2;
+  
+    for (let i = 0; i < lines.length; i++) {
+      ctx.fillText(lines[i].trim(), x, startY + i * lineHeight);
+    }
+  }
     ctx.textAlign = "start";
     ctx.textBaseline = "alphabetic";
   }
