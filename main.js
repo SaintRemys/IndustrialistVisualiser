@@ -60,19 +60,36 @@ function getItemAt(worldX, worldY) {
 function calculatePreviewPosition() {
   if (!currentItem) return;
 
-  // Always round mouse position to nearest whole grid cell
-  const gridMouseX = Math.round(mouseWorldX / GRID_SIZE);
-  const gridMouseY = Math.round(mouseWorldY / GRID_SIZE);
-
   const rot = ((previewRotation % 360) + 360) % 360;
-  const isVertical = rot === 90 || rot === 270;
 
-  const itemW = isVertical ? currentItem.height : currentItem.width;
-  const itemH = isVertical ? currentItem.width : currentItem.height;
+  const anchorGridX = Math.floor(mouseWorldX / GRID_SIZE);
+  const anchorGridY = Math.floor(mouseWorldY / GRID_SIZE);
 
-  // Use current mouse center and adjust to keep item centered correctly
-  previewX = gridMouseX - Math.floor(itemW / 2);
-  previewY = gridMouseY - Math.floor(itemH / 2);
+  const w = currentItem.width;
+  const h = currentItem.height;
+
+  let dx = 0, dy = 0;
+
+  if (w === 2 && h === 1) {
+    if (rot === 0) [dx, dy] = [0, 0];
+    if (rot === 90) [dx, dy] = [0, -1];
+    if (rot === 180) [dx, dy] = [-1, -1];
+    if (rot === 270) [dx, dy] = [-1, 0];
+  } else if (w === 1 && h === 2) {
+    if (rot === 0) [dx, dy] = [0, 0];
+    if (rot === 90) [dx, dy] = [1, 0];
+    if (rot === 180) [dx, dy] = [1, -1];
+    if (rot === 270) [dx, dy] = [0, -1];
+  } else {
+    // fallback for other sizes (center-based)
+    const [rw, rh] = getRotatedSize(w, h, rot);
+    previewX = anchorGridX - Math.floor(rw / 2);
+    previewY = anchorGridY - Math.floor(rh / 2);
+    return;
+  }
+
+  previewX = anchorGridX + dx;
+  previewY = anchorGridY + dy;
 }
 
 
