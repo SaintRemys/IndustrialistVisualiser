@@ -12,29 +12,40 @@ let currentItem = null;
 let currentMode = "build";
 let totalCost = 0;
 
-let previewRotation = 0;
+let previewRotation = 0; // degrees, 0/90/180/270
 let mouseWorldX = 0;
 let mouseWorldY = 0;
-let previewX = 0;
+let previewX = 0; // grid coordinates of preview top-left
 let previewY = 0;
 
 function getRotatedSize(w, h, rot) {
-  return rot % 180 === 0 ? [w, h] : [h, w];
+  rot = rot % 360;
+  return rot === 0 || rot === 180 ? [w, h] : [h, w];
 }
 
+// Check if any cell in area (x,y,w,h) is occupied
 function isOccupied(x, y, w, h) {
   for (let item of placedItems) {
     for (let dx = 0; dx < w; dx++) {
       for (let dy = 0; dy < h; dy++) {
-        for (let idx = 0; idx < item.width; idx++) {
-          for (let idy = 0; idy < item.height; idy++) {
-            if (x + dx === item.x + idx && y + dy === item.y + idy) return true;
+        for (let ix = 0; ix < item.width; ix++) {
+          for (let iy = 0; iy < item.height; iy++) {
+            if (x + dx === item.x + ix && y + dy === item.y + iy) return true;
           }
         }
       }
     }
   }
   return false;
+}
+
+// Calculate preview top-left so that mouse is centered on the object
+function calculatePreviewPosition() {
+  const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+  // Convert mouseWorldX/Y from pixels to grid units (grid size 50)
+  // We want the mouse to be at the CENTER of the object, so top-left = mouse - half size
+  previewX = Math.floor(mouseWorldX / 50 - w / 2);
+  previewY = Math.floor(mouseWorldY / 50 - h / 2);
 }
 
 function drawGrid() {
@@ -64,6 +75,7 @@ function drawGrid() {
     ctx.stroke();
   }
 
+  // Draw placed items
   for (let item of placedItems) {
     ctx.fillStyle = "orange";
     ctx.fillRect(item.x * gridSize, item.y * gridSize, item.width * gridSize, item.height * gridSize);
@@ -71,6 +83,7 @@ function drawGrid() {
     ctx.fillText(item.name, item.x * gridSize + 5, item.y * gridSize + 20);
   }
 
+  // Draw preview item with transparency
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
@@ -89,6 +102,7 @@ canvas.addEventListener("mousedown", e => {
 });
 canvas.addEventListener("mouseup", () => isDragging = false);
 canvas.addEventListener("mouseleave", () => isDragging = false);
+
 canvas.addEventListener("mousemove", e => {
   if (isDragging) {
     offsetX += e.clientX - lastX;
@@ -102,9 +116,7 @@ canvas.addEventListener("mousemove", e => {
   mouseWorldY = (e.clientY - rect.top - offsetY) / zoom;
 
   if (currentItem) {
-    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-    previewX = Math.floor(mouseWorldX / 50 - w / 2);
-    previewY = Math.floor(mouseWorldY / 50 - h / 2);
+    calculatePreviewPosition();
   }
 
   drawGrid();
@@ -162,9 +174,7 @@ document.addEventListener("keydown", e => {
   }
   if (e.key.toLowerCase() === "r" && currentItem) {
     previewRotation = (previewRotation + 90) % 360;
-    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-    previewX = Math.floor(mouseWorldX / 50 - w / 2);
-    previewY = Math.floor(mouseWorldY / 50 - h / 2);
+    calculatePreviewPosition();
     drawGrid();
   }
 });
