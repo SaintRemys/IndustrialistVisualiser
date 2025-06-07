@@ -47,25 +47,24 @@ let lastNotificationText = null;
 let lastNotificationBox = null;
 let lastNotificationCount = 1;
 
-function showNotification(message, duration = 3000) {
-  if (lastNotificationText === message && lastNotificationBox) {
-    lastNotificationCount++;
-    lastNotificationBox.textContent = `${message} (x${lastNotificationCount})`;
+const activeNotifications = [];
 
-    clearTimeout(lastNotificationBox._fadeTimeout);
-    lastNotificationBox.style.opacity = "1";
-    lastNotificationBox._fadeTimeout = setTimeout(() => {
-      lastNotificationBox.style.opacity = "0";
-      setTimeout(() => {
-        lastNotificationBox.remove();
-        lastNotificationBox = null;
-        lastNotificationText = null;
-        lastNotificationCount = 1;
-      }, 300);
+function showNotification(message, duration = 3000) {
+  // Try to find an existing matching notification
+  const existing = activeNotifications.find(n => n.message === message);
+  
+  if (existing) {
+    existing.count++;
+    existing.box.textContent = `${message} (x${existing.count})`;
+    clearTimeout(existing.timeout);
+    existing.box.style.opacity = "1";
+    existing.timeout = setTimeout(() => {
+      fadeOutNotification(existing);
     }, duration);
     return;
   }
 
+  // Create new notification box
   const box = document.createElement("div");
   box.textContent = message;
   box.style.background = "linear-gradient(#d91012, #710809)";
@@ -77,27 +76,30 @@ function showNotification(message, duration = 3000) {
   box.style.opacity = "1";
   box.style.textAlign = "right";
   box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
-  box.style.margin = "0";
+  box.style.marginBottom = "4px";
 
   const container = document.getElementById("notifications");
   container.appendChild(box);
 
-  box._fadeTimeout = setTimeout(() => {
-    box.style.opacity = "0";
-    setTimeout(() => {
-      box.remove();
-      if (lastNotificationBox === box) {
-        lastNotificationBox = null;
-        lastNotificationText = null;
-        lastNotificationCount = 1;
-      }
-    }, 300);
-  }, duration);
+  const entry = {
+    message,
+    box,
+    count: 1,
+    timeout: setTimeout(() => fadeOutNotification(entry), duration)
+  };
 
-  lastNotificationText = message;
-  lastNotificationBox = box;
-  lastNotificationCount = 1;
+  activeNotifications.push(entry);
 }
+
+function fadeOutNotification(entry) {
+  entry.box.style.opacity = "0";
+  setTimeout(() => {
+    entry.box.remove();
+    const index = activeNotifications.indexOf(entry);
+    if (index !== -1) activeNotifications.splice(index, 1);
+  }, 300);
+}
+
 
 function getItemAt(worldX, worldY) {
   const gridX = Math.floor(worldX / GRID_SIZE);
