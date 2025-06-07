@@ -24,6 +24,9 @@ let mouseWorldY = 0;
 let previewX = 0;
 let previewY = 0;
 
+// Delete mode variables
+let highlightedItem = null;
+
 const GRID_SIZE = 50;
 
 function getRotatedSize(w, h, rot) {
@@ -41,6 +44,20 @@ function isOccupied(x, y, w, h) {
   return false;
 }
 
+function getItemAt(worldX, worldY) {
+  const gridX = Math.floor(worldX / GRID_SIZE);
+  const gridY = Math.floor(worldY / GRID_SIZE);
+  
+  for (let i = placedItems.length - 1; i >= 0; i--) {
+    const item = placedItems[i];
+    if (gridX >= item.x && gridX < item.x + item.width &&
+        gridY >= item.y && gridY < item.y + item.height) {
+      return item;
+    }
+  }
+  return null;
+}
+
 function calculatePreviewPosition() {
   if (!currentItem) return;
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
@@ -56,7 +73,7 @@ function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.save();
   ctx.translate(offsetX, offsetY);
-    const uniformZoom = Math.min(zoom, zoom);
+  const uniformZoom = Math.min(zoom, zoom);
   ctx.scale(uniformZoom, uniformZoom);
 
   const cols = Math.ceil(canvas.width / zoom / GRID_SIZE) + 2;
@@ -80,26 +97,30 @@ function drawGrid() {
     ctx.stroke();
   }
 
-for (const item of placedItems) {
-  ctx.fillStyle = "#2d2d2d";
-  ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-  ctx.lineWidth = 2 / zoom;
-  ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-  
-  ctx.fillStyle = "white";
-  ctx.font = `12px Arial`;
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
+  for (const item of placedItems) {
+    // Check if this item is highlighted for deletion
+    const isHighlighted = highlightedItem === item;
+    
+    ctx.fillStyle = isHighlighted ? "#ff4444" : "#2d2d2d";
+    ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
+    
+    ctx.strokeStyle = isHighlighted ? "#ff0000" : "#FFFFFF";
+    ctx.lineWidth = isHighlighted ? 3 / zoom : 2 / zoom;
+    ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
+    
+    ctx.fillStyle = "white";
+    ctx.font = `12px Arial`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
 
-  const centerX = item.x * GRID_SIZE + (item.width * GRID_SIZE) / 2;
-  const centerY = item.y * GRID_SIZE + (item.height * GRID_SIZE) / 2;
-  
-  ctx.fillText(item.name, centerX, centerY);
-  
-  ctx.textAlign = "start";
-  ctx.textBaseline = "alphabetic";
-}
-
+    const centerX = item.x * GRID_SIZE + (item.width * GRID_SIZE) / 2;
+    const centerY = item.y * GRID_SIZE + (item.height * GRID_SIZE) / 2;
+    
+    ctx.fillText(item.name, centerX, centerY);
+    
+    ctx.textAlign = "start";
+    ctx.textBaseline = "alphabetic";
+  }
 
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
@@ -176,26 +197,46 @@ canvas.addEventListener("mousemove", e => {
 });
 
 canvas.addEventListener("click", e => {
-  if (currentMode !== "build" || !currentItem) return;
+  if (currentMode === "build") {
+    if (!currentItem) return;
 
-  const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  if (isOccupied(previewX, previewY, w, h)) return;
-  
-  placedItems.push({
-    x: previewX,
-    y: previewY,
-    name: currentItem.name,
-    price: currentItem.price,
-    width: w,
-    height: h,
-    rotation: previewRotation,
-    originalWidth: currentItem.width,
-    originalHeight: currentItem.height
-  });
+    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+    if (isOccupied(previewX, previewY, w, h)) return;
+    
+    placedItems.push({
+      x: previewX,
+      y: previewY,
+      name: currentItem.name,
+      price: currentItem.price,
+      width: w,
+      height: h,
+      rotation: previewRotation,
+      originalWidth: currentItem.width,
+      originalHeight: currentItem.height
+    });
 
-  totalCost += currentItem.price;
-  document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
-  drawGrid();
+    totalCost += currentItem.price;
+    document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+    drawGrid();
+  } else if (currentMode === "delete") {
+    const clickedItem = getItemAt(mouseWorldX, mouseWorldY);
+    
+    if (highlightedItem === clickedItem && clickedItem !== null) {
+      // Second click on same item - delete it
+      const itemIndex = placedItems.indexOf(clickedItem);
+      if (itemIndex > -1) {
+        totalCost -= clickedItem.price;
+        placedItems.splice(itemIndex, 1);
+        document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+      }
+      highlightedItem = null;
+    } else {
+      // First click or click on different item - highlight it
+      highlightedItem = clickedItem;
+    }
+    
+    drawGrid();
+  }
 });
 
 canvas.addEventListener("wheel", e => {
@@ -244,6 +285,10 @@ document.querySelectorAll(".mode-btn").forEach(btn => {
     currentMode = btn.dataset.mode;
     document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
+    
+    // Clear highlight when switching modes
+    highlightedItem = null;
+    
     drawGrid();
   });
 });
@@ -255,11 +300,21 @@ document.addEventListener("keydown", e => {
     document.querySelectorAll(".mode-btn").forEach(b => {
       b.classList.toggle("active", b.dataset.mode === currentMode);
     });
+    
+    // Clear highlight when switching modes
+    highlightedItem = null;
+    
     drawGrid();
   }
   if (e.key.toLowerCase() === "r" && currentItem) {
     previewRotation = (previewRotation + 90) % 360;
     calculatePreviewPosition();
+    drawGrid();
+  }
+  
+  // ESC key to clear highlight
+  if (e.key === "Escape" && currentMode === "delete") {
+    highlightedItem = null;
     drawGrid();
   }
 });
