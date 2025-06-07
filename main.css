@@ -37,6 +37,7 @@
   height: 57px;
   text-align: center;
   vertical-align: middle;
+  transform: scale(1.1);
 }
 
 .mode-btn.active::before {
