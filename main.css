@@ -28,10 +28,11 @@
 }
 
 .mode-btn.active {
-  border: 2px solid;
-  border-image: linear-gradient(45deg, #790000, #e40603) 1;
-  border-radius: 12px;
   transform: scale(1.1);
+}
+.mode-btn.active:before {
+  background: linear-gradient(45deg, #790000, #e40603);
+  transform: scale(1.11)
 }
 
 html, body {
