@@ -18,7 +18,7 @@
   position: relative;
 }
 
-.mode-btn:hover {
+.mode-btn:hover:not(.active) {  /* Only hover when NOT active */
   border: 2px solid white;
   transform: scale(1.1);
 }
@@ -26,29 +26,27 @@
 .mode-btn img {
   width: 50px;
   height: 50px;
-  z-index: 5;
+  position: relative; /* Add this */
+  z-index: 2; /* Make sure image stays on top */
 }
 
 .mode-btn.active {
   transform: scale(1.1);
-  position: relative;
   background: linear-gradient(45deg, #790000, #e40603);
   padding: 3px;
+  border: none; /* Remove the black border when active */
 }
 
 .mode-btn.active::before {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
   background: linear-gradient(to bottom, #272727, #131313);
   border-radius: 9px;
-}
-
-.mode-btn.active:hover {
-  border: none; !important
+  z-index: 1; /* Put background behind image */
 }
 
 html, body {
