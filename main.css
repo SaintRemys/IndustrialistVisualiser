@@ -13,6 +13,7 @@
   transform-origin: center bottom;
   position: relative;
   z-index: 0;
+  border: none;
 }
 
 .mode-btn:hover {
