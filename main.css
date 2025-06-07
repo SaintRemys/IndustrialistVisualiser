@@ -44,7 +44,6 @@ html, body {
   background: #ddd;
   border-right: 2px solid #aaa;
   padding: 10px;
-  display: flex;
 }
 .item {
   background: #fff;
@@ -73,6 +72,7 @@ display: block;
   justify-content: center;
   align-items: center;
   color: white;
+  opacity: 0;
 }
 #totalCost {
   position: fixed;
