@@ -49,8 +49,10 @@ function calculatePreviewPosition() {
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.save();
-  ctx.translate(offsetX, offsetY);
+  const gridSize = 50;
+  ctx.translate(offsetX - gridSize, offsetY);
   ctx.scale(zoom, zoom);
+
 
   const gridSize = 50;
   const cols = canvas.width / zoom / gridSize + 2;
