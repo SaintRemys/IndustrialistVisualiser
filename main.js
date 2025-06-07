@@ -165,8 +165,6 @@ function drawGrid() {
     ctx.fillText(currentItem.name, textX, textY);
     ctx.shadowBlur = 0;
     
-    // Draw rotation indicator (small arrow)
-    if (previewRotation !== 0) {
       const centerX = px + (w * GRID_SIZE) / 2;
       const centerY = py + (h * GRID_SIZE) / 2;
       const arrowSize = 10 / zoom;
@@ -184,7 +182,6 @@ function drawGrid() {
       ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
       ctx.stroke();
       ctx.restore();
-    }
     
     ctx.restore();
   }
