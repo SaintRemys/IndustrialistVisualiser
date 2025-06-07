@@ -34,10 +34,6 @@
 .mode-btn.active::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
   background: linear-gradient(45deg, #790000, #e40603);
   border-radius: inherit;
   z-index: -1;
