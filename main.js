@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth - 200;
-canvas.height = window.innerHeight;
+canvas.width = 500;
+canvas.height = 500;
 
 let offsetX = 0, offsetY = 0;
 let zoom = 1;
@@ -13,22 +13,21 @@ let currentItem = null;
 let currentMode = "build";
 let totalCost = 0;
 
-let previewRotation = 0; // 0,90,180,270
+let previewRotation = 0;
 let mouseWorldX = 0;
 let mouseWorldY = 0;
-let previewX = 0; // grid coords (top-left of preview)
+let previewX = 0;
 let previewY = 0;
 
 const GRID_SIZE = 50;
 
 function getRotatedSize(w, h, rot) {
-  rot = ((rot % 360) + 360) % 360; // Normalize to 0-359
+  rot = ((rot % 360) + 360) % 360;
   return (rot === 0 || rot === 180) ? [w, h] : [h, w];
 }
 
 function isOccupied(x, y, w, h) {
   for (const item of placedItems) {
-    // Check if rectangles overlap
     if (!(x + w <= item.x || item.x + item.width <= x || 
           y + h <= item.y || item.y + item.height <= y)) {
       return true;
@@ -39,16 +38,11 @@ function isOccupied(x, y, w, h) {
 
 function calculatePreviewPosition() {
   if (!currentItem) return;
-
-  // Get rotated dimensions
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
 
-  // Calculate grid position based on mouse position
-  // We want the preview to be centered on the mouse cursor
   const gridMouseX = mouseWorldX / GRID_SIZE;
   const gridMouseY = mouseWorldY / GRID_SIZE;
 
-  // Center the preview on the mouse
   previewX = Math.floor(gridMouseX - w / 2);
   previewY = Math.floor(gridMouseY - h / 2);
 }
@@ -57,9 +51,9 @@ function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.save();
   ctx.translate(offsetX, offsetY);
-  ctx.scale(zoom, zoom);
+    const uniformZoom = Math.min(zoom, zoom);
+  ctx.scale(uniformZoom, uniformZoom);
 
-  // Draw grid lines
   const cols = Math.ceil(canvas.width / zoom / GRID_SIZE) + 2;
   const rows = Math.ceil(canvas.height / zoom / GRID_SIZE) + 2;
   const startX = -offsetX / zoom - GRID_SIZE;
@@ -81,7 +75,6 @@ function drawGrid() {
     ctx.stroke();
   }
 
-  // Draw placed items
   for (const item of placedItems) {
     ctx.fillStyle = "orange";
     ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
