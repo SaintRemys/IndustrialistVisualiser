@@ -1,19 +1,42 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 function setCanvasSize() {
-  // Force layout calculation
-  const rect = canvas.getBoundingClientRect();
-  canvas.width = rect.width;
-  canvas.height = rect.height;
-  console.log('Canvas sized to:', canvas.width, 'x', canvas.height);
+ const rect = canvas.getBoundingClientRect();
+ console.log('Checking size:', rect.width, 'x', rect.height);
+ 
+ // Check if it's still the default size
+ if (rect.width === 300 && rect.height === 150) {
+   console.log('Still default size, trying again...');
+   return false;
+ }
+ 
+ if (rect.width > 0 && rect.height > 0) {
+   canvas.width = rect.width;
+   canvas.height = rect.height;
+   console.log('Canvas sized to:', canvas.width, 'x', canvas.height);
+   drawGrid(); // Draw once properly sized
+   return true;
+ }
+ 
+ return false;
 }
 
-// Try multiple times to catch when layout is ready
-setTimeout(setCanvasSize, 0);
-setTimeout(setCanvasSize, 10);
-setTimeout(setCanvasSize, 100);
+// Keep trying until it's not the default size
+function initCanvas() {
+ if (!setCanvasSize()) {
+   requestAnimationFrame(initCanvas);
+ }
+}
 
-window.addEventListener('resize', setCanvasSize);
+// Start immediately
+initCanvas();
+
+// Also handle window resize
+window.addEventListener('resize', () => {
+ canvas.width = canvas.offsetWidth;
+ canvas.height = canvas.offsetHeight;
+ drawGrid();
+});
 
 
 let offsetX = 0, offsetY = 0;
