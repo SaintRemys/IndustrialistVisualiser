@@ -28,19 +28,19 @@
 }
 
 .mode-btn.active {
-  transform: scale(1.1);
-}
-
-.mode-btn.active::before {
   content: '';
   position: absolute;
   background: linear-gradient(45deg, #790000, #e40603);
   border-radius: inherit;
   z-index: -1;
-  width: 58px;
-  height: 58px;
+  width: 57px;
+  height: 57px;
   text-align: center;
   vertical-align: middle;
+}
+
+.mode-btn.active::before {
+  transform: scale(1.1);
 }
 
 .mode-btn.active:hover {
