@@ -13,23 +13,22 @@ let currentMode = "build";
 let totalCost = 0;
 
 let previewRotation = 0;
-let mouseGridX = 0;
-let mouseGridY = 0;
+let mouseWorldX = 0;
+let mouseWorldY = 0;
+let previewX = 0;
+let previewY = 0;
 
 function getRotatedSize(w, h, rot) {
-  rot = ((rot % 360) + 360) % 360;
   return rot % 180 === 0 ? [w, h] : [h, w];
 }
 
-function isOccupied(x, y, width, height) {
+function isOccupied(x, y, w, h) {
   for (let item of placedItems) {
-    for (let dx = 0; dx < width; dx++) {
-      for (let dy = 0; dy < height; dy++) {
+    for (let dx = 0; dx < w; dx++) {
+      for (let dy = 0; dy < h; dy++) {
         for (let idx = 0; idx < item.width; idx++) {
           for (let idy = 0; idy < item.height; idy++) {
-            if ((x + dx === item.x + idx) && (y + dy === item.y + idy)) {
-              return true;
-            }
+            if (x + dx === item.x + idx && y + dy === item.y + idy) return true;
           }
         }
       }
@@ -75,9 +74,9 @@ function drawGrid() {
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
-    ctx.fillRect(mouseGridX * gridSize, mouseGridY * gridSize, w * gridSize, h * gridSize);
+    ctx.fillRect(previewX * gridSize, previewY * gridSize, w * gridSize, h * gridSize);
     ctx.strokeStyle = "black";
-    ctx.strokeRect(mouseGridX * gridSize, mouseGridY * gridSize, w * gridSize, h * gridSize);
+    ctx.strokeRect(previewX * gridSize, previewY * gridSize, w * gridSize, h * gridSize);
   }
 
   ctx.restore();
@@ -99,25 +98,32 @@ canvas.addEventListener("mousemove", e => {
   }
 
   const rect = canvas.getBoundingClientRect();
-  const mx = (e.clientX - rect.left - offsetX) / zoom;
-  const my = (e.clientY - rect.top - offsetY) / zoom;
-  mouseGridX = Math.floor(mx / 50);
-  mouseGridY = Math.floor(my / 50);
+  mouseWorldX = (e.clientX - rect.left - offsetX) / zoom;
+  mouseWorldY = (e.clientY - rect.top - offsetY) / zoom;
+
+  if (currentItem) {
+    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+    previewX = Math.floor(mouseWorldX / 50 - w / 2);
+    previewY = Math.floor(mouseWorldY / 50 - h / 2);
+  }
+
   drawGrid();
 });
 
 canvas.addEventListener("click", e => {
   if (currentMode !== "build" || !currentItem) return;
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
-  if (isOccupied(mouseGridX, mouseGridY, w, h)) return;
+  if (isOccupied(previewX, previewY, w, h)) return;
+
   placedItems.push({
-    x: mouseGridX,
-    y: mouseGridY,
+    x: previewX,
+    y: previewY,
     name: currentItem.name,
     price: currentItem.price,
     width: w,
     height: h
   });
+
   totalCost += currentItem.price;
   document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
   drawGrid();
@@ -156,6 +162,9 @@ document.addEventListener("keydown", e => {
   }
   if (e.key.toLowerCase() === "r" && currentItem) {
     previewRotation = (previewRotation + 90) % 360;
+    const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
+    previewX = Math.floor(mouseWorldX / 50 - w / 2);
+    previewY = Math.floor(mouseWorldY / 50 - h / 2);
     drawGrid();
   }
 });
