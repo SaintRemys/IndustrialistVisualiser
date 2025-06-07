@@ -60,7 +60,7 @@ function drawGrid() {
   const startY = -offsetY / zoom - GRID_SIZE;
 
   ctx.strokeStyle = "#FFFFFF";
-  ctx.lineWidth = 1 / zoom; // Keep lines thin at all zoom levels
+  ctx.lineWidth = 1 / zoom;
 
   for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
     ctx.beginPath();
@@ -87,18 +87,16 @@ function drawGrid() {
     ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20/zoom);
   }
 
-  // Draw preview
+
   if (currentMode === "build" && currentItem) {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     const px = previewX * GRID_SIZE;
     const py = previewY * GRID_SIZE;
 
-    // Check if placement is valid
     const isValid = !isOccupied(previewX, previewY, w, h);
 
     ctx.save();
 
-    // Draw the preview rectangle
     ctx.fillStyle = isValid ? "rgba(0,255,0,0.3)" : "rgba(255,0,0,0.3)";
     ctx.fillRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
 
@@ -106,33 +104,29 @@ function drawGrid() {
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
 
-    // Draw item name
     ctx.fillStyle = "black";
     ctx.font = "12px Arial";
     const textX = px + 5;
     const textY = py + 15/zoom;
     ctx.fillText(currentItem.name, textX, textY);
 
-    // Draw rotation indicator (small arrow)
-    if (previewRotation !== 0) {
-      const centerX = px + (w * GRID_SIZE) / 2;
-      const centerY = py + (h * GRID_SIZE) / 2;
-      const arrowSize = 10 / zoom;
+    const centerX = px + (w * GRID_SIZE) / 2;
+    const centerY = py + (h * GRID_SIZE) / 2;
+    const arrowSize = 10 / zoom;
 
-      ctx.save();
-      ctx.translate(centerX, centerY);
-      ctx.rotate(previewRotation * Math.PI / 180);
-      ctx.strokeStyle = "blue";
-      ctx.lineWidth = 2 / zoom;
-      ctx.beginPath();
-      ctx.moveTo(-arrowSize, 0);
-      ctx.lineTo(arrowSize, 0);
-      ctx.moveTo(arrowSize - 3/zoom, -3/zoom);
-      ctx.lineTo(arrowSize, 0);
-      ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
-      ctx.stroke();
-      ctx.restore();
-    }
+    ctx.save();
+    ctx.translate(centerX, centerY);
+    ctx.rotate(previewRotation * Math.PI / 180);
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 2 / zoom;
+    ctx.beginPath();
+    ctx.moveTo(-arrowSize, 0);
+    ctx.lineTo(arrowSize, 0);
+    ctx.moveTo(arrowSize - 3/zoom, -3/zoom);
+    ctx.lineTo(arrowSize, 0);
+    ctx.lineTo(arrowSize - 3/zoom, 3/zoom);
+    ctx.stroke();
+    ctx.restore();
 
     ctx.restore();
   }
@@ -157,7 +151,6 @@ canvas.addEventListener("mousemove", e => {
     lastY = e.clientY;
   }
 
-  // Calculate mouse world coordinates
   const rect = canvas.getBoundingClientRect();
   mouseWorldX = (e.clientX - rect.left - offsetX) / zoom;
   mouseWorldY = (e.clientY - rect.top - offsetY) / zoom;
@@ -174,8 +167,7 @@ canvas.addEventListener("click", e => {
 
   const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
   if (isOccupied(previewX, previewY, w, h)) return;
-
-  // Store the item with its original rotation information
+  
   placedItems.push({
     x: previewX,
     y: previewY,
@@ -193,7 +185,6 @@ canvas.addEventListener("click", e => {
   drawGrid();
 });
 
-// Zoom functionality
 canvas.addEventListener("wheel", e => {
   e.preventDefault();
   const rect = canvas.getBoundingClientRect();
@@ -210,7 +201,6 @@ canvas.addEventListener("wheel", e => {
     offsetY = mouseY - (mouseY - offsetY) * zoomChange;
     zoom = newZoom;
 
-    // Recalculate mouse world position
     mouseWorldX = (mouseX - offsetX) / zoom;
     mouseWorldY = (mouseY - offsetY) / zoom;
 
