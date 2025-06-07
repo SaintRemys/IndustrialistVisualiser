@@ -83,13 +83,13 @@ width: 100%; height: auto;
 }
 
 canvas {
-  position: fixed;
-  top: 0;
-  left: 200px;
-  right: 0;
-  bottom: 0;
-  background: #bfbfbf;
-  display: block;
+  position: fixed !important;
+  top: 0 !important;
+  left: 200px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: #bfbfbf !important;
+  display: block !important;
 }
 
 #toolbar {
