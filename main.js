@@ -55,26 +55,58 @@ function calculatePreviewPosition() {
 
 function drawGrid() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Fill background with dark color
+  ctx.fillStyle = "#2a2a2a";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
   ctx.save();
   ctx.translate(offsetX, offsetY);
   ctx.scale(zoom, zoom);
 
-  // Draw grid lines
+  // Calculate grid bounds
   const cols = Math.ceil(canvas.width / zoom / GRID_SIZE) + 2;
   const rows = Math.ceil(canvas.height / zoom / GRID_SIZE) + 2;
   const startX = -offsetX / zoom - GRID_SIZE;
   const startY = -offsetY / zoom - GRID_SIZE;
-
-  ctx.strokeStyle = "#FFFFFF";
-  ctx.lineWidth = 1 / zoom; // Keep lines thin at all zoom levels
   
-  for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
+  // Draw alternating grid cells (like the image)
+  const gridStartX = Math.floor(startX / GRID_SIZE);
+  const gridStartY = Math.floor(startY / GRID_SIZE);
+  
+  for (let gx = gridStartX; gx < gridStartX + cols; gx++) {
+    for (let gy = gridStartY; gy < gridStartY + rows; gy++) {
+      const x = gx * GRID_SIZE;
+      const y = gy * GRID_SIZE;
+      
+      // Create checkerboard pattern with subtle color variations
+      const isEven = (gx + gy) % 2 === 0;
+      ctx.fillStyle = isEven ? "#333333" : "#2d2d2d";
+      ctx.fillRect(x, y, GRID_SIZE, GRID_SIZE);
+      
+      // Add subtle border to each cell
+      ctx.strokeStyle = "#404040";
+      ctx.lineWidth = 0.5 / zoom;
+      ctx.strokeRect(x, y, GRID_SIZE, GRID_SIZE);
+    }
+  }
+  
+  // Draw major grid lines every 5 cells (optional - for better navigation)
+  ctx.strokeStyle = "#555555";
+  ctx.lineWidth = 1.5 / zoom;
+  
+  for (let x = Math.floor(startX / (GRID_SIZE * 5)) * (GRID_SIZE * 5); 
+       x < startX + cols * GRID_SIZE; 
+       x += GRID_SIZE * 5) {
     ctx.beginPath();
     ctx.moveTo(x, startY);
     ctx.lineTo(x, startY + rows * GRID_SIZE);
     ctx.stroke();
   }
-  for (let y = Math.floor(startY / GRID_SIZE) * GRID_SIZE; y < startY + rows * GRID_SIZE; y += GRID_SIZE) {
+  
+  for (let y = Math.floor(startY / (GRID_SIZE * 5)) * (GRID_SIZE * 5); 
+       y < startY + rows * GRID_SIZE; 
+       y += GRID_SIZE * 5) {
     ctx.beginPath();
     ctx.moveTo(startX, y);
     ctx.lineTo(startX + cols * GRID_SIZE, y);
@@ -85,11 +117,11 @@ function drawGrid() {
   for (const item of placedItems) {
     ctx.fillStyle = "orange";
     ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "#ff8c00";
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
     
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "white";
     ctx.font = `${14/zoom}px Arial`;
     ctx.fillText(item.name, item.x * GRID_SIZE + 5, item.y * GRID_SIZE + 20/zoom);
   }
@@ -99,26 +131,31 @@ function drawGrid() {
     const [w, h] = getRotatedSize(currentItem.width, currentItem.height, previewRotation);
     const px = previewX * GRID_SIZE;
     const py = previewY * GRID_SIZE;
-
+    
     // Check if placement is valid
     const isValid = !isOccupied(previewX, previewY, w, h);
     
     ctx.save();
     
     // Draw the preview rectangle
-    ctx.fillStyle = isValid ? "rgba(0,255,0,0.3)" : "rgba(255,0,0,0.3)";
+    ctx.globalAlpha = 0.7;
+    ctx.fillStyle = isValid ? "rgba(0,255,100,0.4)" : "rgba(255,50,50,0.4)";
     ctx.fillRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
     
-    ctx.strokeStyle = isValid ? "green" : "red";
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = isValid ? "#00ff64" : "#ff3232";
     ctx.lineWidth = 2 / zoom;
     ctx.strokeRect(px, py, w * GRID_SIZE, h * GRID_SIZE);
     
     // Draw item name
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "white";
     ctx.font = `${12/zoom}px Arial`;
+    ctx.shadowColor = "black";
+    ctx.shadowBlur = 2;
     const textX = px + 5;
     const textY = py + 15/zoom;
     ctx.fillText(currentItem.name, textX, textY);
+    ctx.shadowBlur = 0;
     
     // Draw rotation indicator (small arrow)
     if (previewRotation !== 0) {
@@ -129,7 +166,7 @@ function drawGrid() {
       ctx.save();
       ctx.translate(centerX, centerY);
       ctx.rotate(previewRotation * Math.PI / 180);
-      ctx.strokeStyle = "blue";
+      ctx.strokeStyle = "#00ccff";
       ctx.lineWidth = 2 / zoom;
       ctx.beginPath();
       ctx.moveTo(-arrowSize, 0);
