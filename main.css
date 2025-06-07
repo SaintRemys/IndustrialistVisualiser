@@ -58,7 +58,7 @@ width: 100%; height: auto;
 }
 canvas {
 position: fixed;
-left: 200px; top: 0; right: 0; bottom: 60px;
+left: 200px; top: 0; right: 0; bottom: 0;
 background: #f0f0f0;
 display: block;
 }
