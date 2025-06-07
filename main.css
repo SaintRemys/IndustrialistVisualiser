@@ -1,5 +1,5 @@
 .mode-btn {
-  background: linear-gradient(to bottom, #272727, #021c01);
+  background: linear-gradient(to bottom, #272727, #000000);
   border: 2px solid transparent;
   border-radius: 12px;
   padding: 8px;
@@ -15,8 +15,8 @@
 
 .mode-btn:hover {
   border: 2px solid white;
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 }
 
 .mode-btn img {
@@ -26,8 +26,8 @@
 
 .mode-btn.active {
   border: 2px solid red;
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 }
 
 html, body {
