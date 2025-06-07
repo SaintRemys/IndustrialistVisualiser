@@ -90,6 +90,8 @@ canvas {
   bottom: 0 !important;
   background: #bfbfbf !important;
   display: block !important;
+  height: 100%;
+  width: auto;
 }
 
 #toolbar {
