@@ -1,25 +1,8 @@
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
-function setCanvasSize() {
- const rect = canvas.getBoundingClientRect();
- console.log('Checking size:', rect.width, 'x', rect.height);
- 
- // Check if it's still the default size
- if (rect.width === 300 && rect.height === 150) {
-   console.log('Still default size, trying again...');
-   return false;
- }
- 
- if (rect.width > 0 && rect.height > 0) {
-   canvas.width = rect.width;
-   canvas.height = rect.height;
-   console.log('Canvas sized to:', canvas.width, 'x', canvas.height);
-   drawGrid(); // Draw once properly sized
-   return true;
- }
- 
- return false;
-}
+console.log('CSS display size:', canvas.offsetWidth, 'x', canvas.offsetHeight);
+console.log('Internal resolution:', canvas.width, 'x', canvas.height);
+console.log('Should match?', canvas.offsetWidth === canvas.width, canvas.offsetHeight === canvas.height);
 
 // Keep trying until it's not the default size
 function initCanvas() {
