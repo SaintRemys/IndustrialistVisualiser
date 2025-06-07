@@ -3,72 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Grid Builder</title>
-  <style>
-    html, body {
-      margin: 0; padding: 0;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-    #sidebar {
-      position: fixed;
-      left: 0; top: 0; bottom: 60px;
-      width: 200px;
-      overflow-y: auto;
-      background: #ddd;
-      border-right: 2px solid #aaa;
-      padding: 10px;
-    }
-    .item {
-      background: #fff;
-      margin-bottom: 10px;
-      padding: 5px;
-      border: 1px solid #aaa;
-      cursor: pointer;
-    }
-    .item img {
-      width: 100%; height: auto;
-    }
-    canvas {
-      position: fixed;
-      left: 200px; top: 0; right: 0; bottom: 60px;
-      background: #f0f0f0;
-      display: block;
-    }
-    #toolbar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 60px;
-      background: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
-    .mode-btn {
-      margin: 0 10px;
-      padding: 10px 20px;
-      background: #555;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .mode-btn.active {
-      background: #1e90ff;
-    }
-    #totalCost {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 18px;
-      background: white;
-      padding: 6px 12px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px #0003;
-    }
-  </style>
 </head>
 <body>
 <div id="sidebar">
@@ -85,10 +19,18 @@
 <canvas id="gridCanvas"></canvas>
 
 <div id="toolbar">
-  <button class="mode-btn" data-mode="build">1 Build</button>
-  <button class="mode-btn" data-mode="wire">2 Wire</button>
-  <button class="mode-btn" data-mode="pipe">3 Pipe</button>
-  <button class="mode-btn" data-mode="delete">4 Delete</button>
+  <button class="mode-btn active" data-mode="build">
+    <img src="path/to/hammer.png" alt="Build">
+  </button>
+  <button class="mode-btn" data-mode="wire">
+    <img src="path/to/wire.png" alt="Wire">
+  </button>
+  <button class="mode-btn" data-mode="pipe">
+    <img src="path/to/pipe.png" alt="Pipe">
+  </button>
+  <button class="mode-btn" data-mode="delete">
+    <img src="path/to/delete.png" alt="Delete">
+  </button>
 </div>
 
 <div id="totalCost">Total: $0</div>
