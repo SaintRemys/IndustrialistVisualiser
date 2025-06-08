@@ -17,18 +17,41 @@
 </head>
 <body>
 <div id="sidebar">
-  <div class="item" data-name="Solar Panel" data-price="50" data-width="2" data-height="1">
-    <img src="">
-    <div><strong>Solar Panel</strong><br>$50</div>
+  <div id="tier1items">
+    <div class="item" data-name="Solar Panel" data-price="80" data-width="1" data-height="1">
+      <img src="https://static.wikitide.net/industrialistwiki/5/5d/Solar_Panel.png">
+      <div class="label-top">Solar Panel</div>
+      <div class="label-bottom">$80</div>
+    </div>
+    
+    <div class="item" data-name="Coal Drill" data-price="50" data-width="3" data-height="1">
+      <img src="https://static.wikitide.net/industrialistwiki/d/d3/Coal_Drill.png">
+      <div class="label-top">Coal Drill</div>
+      <div class="label-bottom">$50</div>
+    </div>
+
+    <div class="item" data-name="Truck Depot" data-price="100" data-width="4" data-height="5">
+      <img src="https://static.wikitide.net/industrialistwiki/7/77/Truck_Depot.png">
+      <div class="label-top">Truck Depot</div>
+      <div class="label-bottom">$100</div>
+    </div>
   </div>
-  <div class="item" data-name="Battery" data-price="100" data-width="1" data-height="1">
-    <img src="">
-    <div><strong>Battery</strong><br>$100</div>
-  </div>
+
+  <div id="tier2items"></div>
+  <div id="tier3items"></div>
+  <div id="tier4items"></div>
 </div>
+
 
 <canvas id="gridCanvas"></canvas>
 <div id="notifications" style="position: fixed; bottom: 50px; right: 12px; z-index: 9999; width: 500px; height: 400px; align-content: flex-end;"></div>
+<div id="tierselector">
+  <div id="tier1">I</div>
+  <div id="tier2">II</div>
+  <div id="tier3">III</div>
+  <div id="tier4">IV</div>
+</div>
+
 <div id="toolbar">
   <button class="mode-btn active" data-mode="build">
     <img src="https://tr.rbxcdn.com/180DAY-da120354fae3e96dc3f38582d9729c04/420/420/Image/Png/noFilter" alt="Build">

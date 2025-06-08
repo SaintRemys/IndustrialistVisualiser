@@ -47,23 +47,24 @@ let lastNotificationText = null;
 let lastNotificationBox = null;
 let lastNotificationCount = 1;
 
-function showNotification(message, duration = 3000) {
-  if (lastNotificationText === message && lastNotificationBox) {
-    lastNotificationCount++;
-    lastNotificationBox.textContent = `${message} (x${lastNotificationCount})`;
+const activeNotifications = [];
 
-    clearTimeout(lastNotificationBox._fadeTimeout);
-    lastNotificationBox.style.opacity = "1";
-    lastNotificationBox._fadeTimeout = setTimeout(() => {
-      lastNotificationBox.style.opacity = "0";
-      setTimeout(() => lastNotificationBox.remove(), 300);
-      lastNotificationBox = null;
-      lastNotificationText = null;
-      lastNotificationCount = 1;
+function showNotification(message, duration = 3000) {
+  // Try to find an existing matching notification
+  const existing = activeNotifications.find(n => n.message === message);
+  
+  if (existing) {
+    existing.count++;
+    existing.box.textContent = `${message} (x${existing.count})`;
+    clearTimeout(existing.timeout);
+    existing.box.style.opacity = "1";
+    existing.timeout = setTimeout(() => {
+      fadeOutNotification(existing);
     }, duration);
     return;
   }
 
+  // Create new notification box
   const box = document.createElement("div");
   box.textContent = message;
   box.style.background = "linear-gradient(#d91012, #710809)";
@@ -75,24 +76,30 @@ function showNotification(message, duration = 3000) {
   box.style.opacity = "1";
   box.style.textAlign = "right";
   box.style.webkitTextStroke = "1px rgba(0, 0, 0, 0.5)";
+  box.style.marginBottom = "4px";
 
   const container = document.getElementById("notifications");
   container.appendChild(box);
 
-  box._fadeTimeout = setTimeout(() => {
-    box.style.opacity = "0";
-    setTimeout(() => box.remove(), 300);
-    if (lastNotificationBox === box) {
-      lastNotificationBox = null;
-      lastNotificationText = null;
-      lastNotificationCount = 1;
-    }
-  }, duration);
+  const entry = {
+    message,
+    box,
+    count: 1,
+    timeout: setTimeout(() => fadeOutNotification(entry), duration)
+  };
 
-  lastNotificationText = message;
-  lastNotificationBox = box;
-  lastNotificationCount = 1;
+  activeNotifications.push(entry);
 }
+
+function fadeOutNotification(entry) {
+  entry.box.style.opacity = "0";
+  setTimeout(() => {
+    entry.box.remove();
+    const index = activeNotifications.indexOf(entry);
+    if (index !== -1) activeNotifications.splice(index, 1);
+  }, 300);
+}
+
 
 function getItemAt(worldX, worldY) {
   const gridX = Math.floor(worldX / GRID_SIZE);
@@ -326,7 +333,8 @@ canvas.addEventListener("click", e => {
       if (itemIndex > -1) {
         totalCost -= clickedItem.price;
         placedItems.splice(itemIndex, 1);
-        document.getElementById("totalCost").textContent = `Total: $${totalCost}`;
+        showNotification(`-$${currentItem.price}`, 5000);
+        document.getElementById("totalCost").innerHTML = `<i>Total: $${totalCost}<i>`;
       }
       highlightedItem = null;
     } else {
@@ -419,3 +427,39 @@ window.addEventListener("resize", () => {
   canvas.height = canvas.offsetHeight;
   drawGrid();
 });
+
+const tierButtons = [
+  { btn: document.getElementById('tier1'), container: document.getElementById('tier1items') },
+  { btn: document.getElementById('tier2'), container: document.getElementById('tier2items') },
+  { btn: document.getElementById('tier3'), container: document.getElementById('tier3items') },
+  { btn: document.getElementById('tier4'), container: document.getElementById('tier4items') },
+];
+
+tierButtons.forEach(({ btn, container }) => {
+  btn.addEventListener('click', () => {
+    tierButtons.forEach(({ btn }) => btn.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    tierButtons.forEach(({ container }) => container.style.display = 'none');
+    container.style.display = 'block';
+  });
+});
+
+const tiers = [
+  { element: document.getElementById('tier1'), selectedClass: 'selected1' },
+  { element: document.getElementById('tier2'), selectedClass: 'selected2' },
+  { element: document.getElementById('tier3'), selectedClass: 'selected3' },
+  { element: document.getElementById('tier4'), selectedClass: 'selected4' },
+];
+
+tiers.forEach(({ element, selectedClass }) => {
+  element.addEventListener('click', () => {
+    tiers.forEach(({ element, selectedClass }) => {
+      element.classList.remove(selectedClass);
+    });
+
+    element.classList.add(selectedClass);
+  });
+});
+tiers[0].element.classList.add(tiers[0].selectedClass);
+

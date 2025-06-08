@@ -56,7 +56,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  font-family: "Merriweather";
+  font-family: "Merriweather" !important;
 }
 
 #sidebar {
@@ -70,22 +70,85 @@ html, body {
   z-index: 2;
 }
 
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  background: #151515;
+  width: 140px;
+}
+
 .item {
-  background: #fff;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #aaa;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background: #111;
+  border: 2px solid #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 5px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .item img {
-width: 100%; height: auto;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
+
+.item::before {
+  z-index: 0;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #464646, #515151 50%, #212121);
+  z-index: 1;
+}
+
+.item .label-top {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 2;
+  text-shadow: 1px 1px 2px black;
+}
+
+.item .label-bottom {
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 1px 1px 2px black;
+}
+
 
 canvas {
   position: fixed !important;
   top: 0 !important;
-  left: 200px !important;
+  left: 140px !important;
   right: 0 !important;
   bottom: 0 !important;
   background: #bfbfbf !important;
@@ -127,4 +190,58 @@ canvas {
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   font-style: normal !important;
+}
+
+#tierselector {
+  position: fixed;
+  left: 173px;
+  top: 6px;
+  width: 75px;
+  height: max-content;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#tier1, #tier2, #tier3, #tier4 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to bottom, #7b7b7b, #3c3c3c);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 25px;
+  box-sizing: border-box;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  margin: 2px;
+}
+
+#tier1:hover, #tier2:hover, #tier3:hover, #tier4:hover {
+  transform: scale(1.05);
+}
+
+#tier1.selected1 {
+  background: linear-gradient(to bottom, #8b8b8b, #444444) !important;
+  border: 2px solid white;
+}
+
+#tier2.selected2 {
+  background: linear-gradient(to bottom, #39e726, #1c7213) !important;
+  border: 2px solid white;
+}
+
+#tier3.selected3 {
+  background: linear-gradient(to bottom, #0b77eb, #053b73) !important;
+  border: 2px solid white;
+}
+
+#tier4.selected4 {
+  background: linear-gradient(to bottom, #8c00ff, #45007e) !important;
+  border: 2px solid white;
 }
