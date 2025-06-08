@@ -180,14 +180,27 @@ function drawGrid() {
   for (const item of placedItems) {
     const isHighlighted = highlightedItem === item;
     
-    ctx.fillStyle = isHighlighted ? "#ff4444" : "#2d2d2d";
+    ctx.fillStyle = isHighlighted ? "#ff4444" : item.color;
     ctx.fillRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    
-    ctx.strokeStyle = isHighlighted ? "#ff0000" : "#FFFFFF";
-    ctx.lineWidth = isHighlighted ? 3 / zoom : 2 / zoom;
-    ctx.strokeRect(item.x * GRID_SIZE, item.y * GRID_SIZE, item.width * GRID_SIZE, item.height * GRID_SIZE);
-    
-    ctx.fillStyle = "white";
+
+    function getContrastColor(hex) {
+      if (!hex) return "#fff";
+      hex = hex.replace(/^#/, "");
+
+      if (hex.length === 3) {
+        hex = hex.split('').map(c => c + c).join('');
+      }
+
+      const r = parseInt(hex.substr(0, 2), 16);
+      const g = parseInt(hex.substr(2, 2), 16);
+      const b = parseInt(hex.substr(4, 2), 16);
+
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+      
+      return luminance > 150 ? "#000" : "#fff";
+    }
+
+    ctx.fillStyle = getContrastColor(item.color);
     ctx.font = `12px Merriweather`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -318,7 +331,8 @@ canvas.addEventListener("click", e => {
       height: h,
       rotation: previewRotation,
       originalWidth: currentItem.width,
-      originalHeight: currentItem.height
+      originalHeight: currentItem.height,
+      color: currentItem.color,
     });
 
     totalCost += currentItem.price;
@@ -378,7 +392,8 @@ document.querySelectorAll(".item").forEach(item => {
       name: item.dataset.name,
       price: parseInt(item.dataset.price),
       width: parseInt(item.dataset.width),
-      height: parseInt(item.dataset.height)
+      height: parseInt(item.dataset.height),
+      color: item.dataset.color,
     };
     previewRotation = 0;
     calculatePreviewPosition();
