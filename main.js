@@ -50,7 +50,6 @@ let lastNotificationCount = 1;
 const activeNotifications = [];
 
 function showNotification(message, duration = 3000) {
-  // Try to find an existing matching notification
   const existing = activeNotifications.find(n => n.message === message);
   
   if (existing) {
@@ -64,7 +63,6 @@ function showNotification(message, duration = 3000) {
     return;
   }
 
-  // Create new notification box
   const box = document.createElement("div");
   box.textContent = message;
   box.style.background = "linear-gradient(#d91012, #710809)";
