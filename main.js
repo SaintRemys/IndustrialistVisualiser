@@ -42,8 +42,9 @@ function file(thing) {
 
 function loadItems() {
   for (i = 1; i <= 4; i++) {
+    let items
     try {
-      const items = file(`dictionary/t${i}-items.json`);
+      items = file(`dictionary/t${i}-items.json`);
     } catch {
       continue
     }
