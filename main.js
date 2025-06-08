@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -30,10 +28,22 @@ let highlightedItem = null;
 
 const GRID_SIZE = 50;
 
+// I need node!!!!!!
+function file(thing) {
+  fetch(thing)
+  .then(response => response.json()) // Convert response to JSON
+  .then(data => {
+    return data // Work with the JSON data
+  })
+  .catch(error => {
+    console.error('Error fetching the JSON file:', error);
+  });
+}
+
 function loadItems() {
   for (i = 1; i <= 4; i++) {
     try {
-      const items = fs.readFileSync(`dictionary/t${i}-items.json`, 'utf8');
+      const items = file(`dictionary/t${i}-items.json`);
     } catch {
       continue
     }
