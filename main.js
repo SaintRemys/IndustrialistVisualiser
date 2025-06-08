@@ -33,7 +33,7 @@ async function file(thing) {
   fetch(thing)
   .then(response => response.json()) // Convert response to JSON
   .then(data => {
-    return data // Work with the JSON data
+    return response // Work with the JSON data
   })
   .catch(error => {
     console.error('Error fetching the JSON file:', error);
