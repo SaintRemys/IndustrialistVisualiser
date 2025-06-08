@@ -1,31 +1,29 @@
-{
-  "tier1items": [
-    {
-      "name": "Solar Panel",
-      "price": 80,
-      "width": 1,
-      "height": 1,
-      "color": "#9FB3DF",
-      "image": "https://static.wikitide.net/industrialistwiki/5/5d/Solar_Panel.png",
-      "texture": null
-    },
-    {
-      "name": "Coal Drill",
-      "price": 50,
-      "width": 3,
-      "height": 1,
-      "color": "#BF9264",
-      "image": "https://static.wikitide.net/industrialistwiki/d/d3/Coal_Drill.png",
-      "texture": null
-    },
-    {
-      "name": "Truck Depot",
-      "price": 100,
-      "width": 4,
-      "height": 5,
-      "color": "#E4E0E1",
-      "image": "https://static.wikitide.net/industrialistwiki/7/77/Truck_Depot.png",
-      "texture": "T1/TruckDepot.png"
-    }
-  ]
-}
+[
+  {
+    "name": "Solar Panel",
+    "price": 80,
+    "width": 1,
+    "height": 1,
+    "color": "#9FB3DF",
+    "image": "https://static.wikitide.net/industrialistwiki/5/5d/Solar_Panel.png",
+    "texture": null
+  },
+  {
+    "name": "Coal Drill",
+    "price": 50,
+    "width": 3,
+    "height": 1,
+    "color": "#BF9264",
+    "image": "https://static.wikitide.net/industrialistwiki/d/d3/Coal_Drill.png",
+    "texture": null
+  },
+  {
+    "name": "Truck Depot",
+    "price": 100,
+    "width": 4,
+    "height": 5,
+    "color": "#E4E0E1",
+    "image": "https://static.wikitide.net/industrialistwiki/7/77/Truck_Depot.png",
+    "texture": "T1/TruckDepot.png"
+  }
+]
