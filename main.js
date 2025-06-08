@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -27,6 +29,49 @@ let previewY = 0;
 let highlightedItem = null;
 
 const GRID_SIZE = 50;
+
+function loadItems() {
+  for (i = 1; i <= 4; i++) {
+    try {
+      const items = fs.readFileSync(`dictionary/t${i}-items.json`, 'utf8');
+    } catch {
+      continue
+    }
+    const itemList = JSON.parse(items);
+    const container = document.getElementById(`tier${i}items`);
+
+    itemList.forEach(item => {
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "item";
+      itemDiv.dataset.name = item.name;
+      itemDiv.dataset.price = item.price;
+      itemDiv.dataset.width = item.width;
+      itemDiv.dataset.height = item.height;
+      itemDiv.dataset.color = item.color;
+      itemDiv.textContent = `${item.name} - $${item.price}`;
+      
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.name;
+      
+      const label_top = document.createElement("div");
+      label_top.className = "label-top";
+      label_top.textContent = item.name;
+
+      const label_bottom = document.createElement("div");
+      label_bottom.className = "label-bottom";
+      label_bottom.textContent = `$${item.price}`;
+
+      itemDiv.appendChild(img);
+      itemDiv.appendChild(label_top);
+      itemDiv.appendChild(label_bottom);
+      container.appendChild(itemDiv);
+   })
+  }
+}
+
+loadItems();
+console.log("Stage Test");
 
 function getRotatedSize(w, h, rot) {
   rot = ((rot % 360) + 360) % 360;
