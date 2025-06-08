@@ -29,7 +29,7 @@ let highlightedItem = null;
 const GRID_SIZE = 50;
 
 // I need node!!!!!!
-function file(thing) {
+async function file(thing) {
   fetch(thing)
   .then(response => response.json()) // Convert response to JSON
   .then(data => {
@@ -40,15 +40,15 @@ function file(thing) {
   });
 }
 
-function loadItems() {
+async function loadItems() {
   for (i = 1; i <= 4; i++) {
     let items
     try {
-      items = file(`dictionary/t${i}-items.json`);
+      items = await file(`dictionary/t${i}-items.json`);
     } catch {
       continue
     }
-    const itemList = JSON.parse(items);
+    const itemList = items; // Data already parsed?
     const container = document.getElementById(`tier${i}items`);
 
     itemList.forEach(item => {
