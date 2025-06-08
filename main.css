@@ -245,3 +245,55 @@ canvas {
   background: linear-gradient(to bottom, #8c00ff, #45007e) !important;
   border: 2px solid white;
 }
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOutBG 1s ease forwards;
+  animation-delay: 4s;
+}
+
+.spinner {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  animation: spin 4s linear infinite, breakFall 1s ease-in forwards;
+  animation-delay: 0s, 4s;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes breakFall {
+  0% {
+    transform: rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+  10% {
+    transform: rotate(5deg) translateY(5px);
+  }
+  30% {
+    transform: rotate(-5deg) translateY(10px);
+  }
+  60% {
+    transform: rotate(3deg) translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(550px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutBG {
+  to { background: rgba(17, 17, 17, 0); }
+}
