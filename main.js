@@ -53,7 +53,7 @@ async function loadItems() {
     } catch {
       continue
     }
-    const itemList = items; // Data already parsed?
+    const itemList = Promise.resolve(items); // Data already parsed?
     const container = document.getElementById(`tier${i}items`);
 
     itemList.forEach(item => {
