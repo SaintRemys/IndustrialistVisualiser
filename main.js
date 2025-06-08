@@ -49,7 +49,7 @@ async function loadItems() {
   for (i = 1; i <= 4; i++) {
     let items;
     try {
-      items = await file(`dictionary/t${i}-items.json`);
+      items = await new file(`dictionary/t${i}-items.json`);
     } catch {
       continue
     }
