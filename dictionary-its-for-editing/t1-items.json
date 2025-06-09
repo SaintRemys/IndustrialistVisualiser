@@ -1,892 +1,969 @@
 [
-	{
-		"name": "AND Gate",
-		"price": 2500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Advanced Pollution Meter",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Advanced Power Rate Meter",
-		"price": 7000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Advanced Power Rate Meter",
-		"price": 7000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Big Plate",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Coal Drill",
-		"price": 50,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.864
-	},
-	{
-		"name": "Coal Generator",
-		"price": 160,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.27
-	},
-	{
-		"name": "Color LED",
-		"price": 3000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Compact Coal Power Plant",
-		"price": 550,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.821
-	},
-	{
-		"name": "Craft Assembler",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Decoration",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Dev Solar Panel",
-		"price": 1.7976931348623157e+308,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Electric Furnace",
-		"price": 190,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.158
-	},
-	{
-		"name": "Farm Harvester",
-		"price": 650,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Firework",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Flag",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Meter",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Meter",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Fluid Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Item Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Hand Crank",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Hand Pump",
-		"price": 2500000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Hot Water Pump",
-		"price": 1.7976931348623157e+308,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Huge Decoration",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Huge Spotlight",
-		"price": 15000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Hyper Depot",
-		"price": 16000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Inclined Light",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Inclined Light2",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Industrial Press",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Ingot Molder",
-		"price": 150,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Item Meter",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Item Meter",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "LV Pole",
-		"price": 5,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Flag",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Gold Fluid Storage Silo",
-		"price": 10000000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Light",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Light2",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Adder",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Breaker",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Button",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Clock",
-		"price": 4000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Dabble",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Delay",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Fluid Pipe Value",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Item Pipe Value",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Knot",
-		"price": 10000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Memory",
-		"price": 10000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Pole",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Pulse",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Relay",
-		"price": 12500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Switch",
-		"price": 2500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Medium Fluid Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Medium Item Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Metal Sign",
-		"price": 900,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "NAND Gate",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "NOR Gate",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "NOT Gate",
-		"price": 1250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "OR Gate",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pollution Gate",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Press",
-		"price": 409,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Real Dev Solar Panel",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Research Station",
-		"price": 75,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Research Station2",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Resistor",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Roller",
-		"price": 411,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Rusty Battery",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Rusty Fluid Pipe Intersection",
-		"price": 250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Rusty Fluid Pipe and Item Intersection",
-		"price": 250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Rusty Pipe Intersection",
-		"price": 250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Sawmill",
-		"price": 800,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Seven Segment Display",
-		"price": 35000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Small Fluid Storage Silo",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Small Item Storage Silo",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Small Plate",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Solar Panel",
-		"price": 80,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Steam Turbine",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Time Gate",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Time Tracker",
-		"price": 120,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Tree",
-		"price": 80,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Tree Farm Controller",
-		"price": 750,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Tree Farm Output",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Tree Farm Sprinkler",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Tree Farm Water Tank",
-		"price": 500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Truck Depot",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.06
-	},
-	{
-		"name": "Water Pump",
-		"price": 60,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Weird Decoration",
-		"price": 666666,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "White LED",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Wind Turbine1",
-		"price": 400,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "XOR Gate",
-		"price": 2500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	}
+  {
+    "name": "Hand Crank",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Hand Crank MK2",
+    "price": 200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Solar Panel",
+    "price": 80,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Wind Turbine 1",
+    "price": 400,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Coal Generator",
+    "price": 160,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.27
+  },
+
+  {
+    "name": "Compact Coal Power Plant",
+    "price": 550,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.821
+  },
+
+  {
+    "name": "Steam Turbine",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Rusty Battery",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "LV Pole",
+    "price": 5,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Power Rate Calculator",
+    "price": 120,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Coal Drill",
+    "price": 50,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.864
+  },
+
+  {
+    "name": "Hand Pump",
+    "price": 2500000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Water Pump",
+    "price": 60,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Craft Assembler",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Electric Furnace",
+    "price": 190,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.158
+  },
+
+  {
+    "name": "Ingot Molder",
+    "price": 150,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Press",
+    "price": 409,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Roller",
+    "price": 411,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Sawmill",
+    "price": 800,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Crude Oil Separator",
+    "price": 1500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.432
+  },
+
+  {
+    "name": "Tree",
+    "price": 80,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Tree Farm Controller",
+    "price": 750,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Farm Harvester",
+    "price": 650,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Tree Farm Output",
+    "price": 200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Tree Farm Sprinkler",
+    "price": 200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Tree Farm Water Tank",
+    "price": 500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Small Fluid Storage Silo",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Small Item Storage Silo",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Short Pipe",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Junction",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Turn",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Section",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Short Fluid Pipe",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Junction",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Turn",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Section",
+    "price": 2,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Rusty Fluid Pipe and Item Intersection",
+    "price": 250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Rusty Fluid Pipe Intersection",
+    "price": 250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Rusty Pipe Intersection",
+    "price": 250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Small Plate",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Decoration",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Big Plate",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Huge Decoration",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Metal Sign",
+    "price": 900,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Light",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Light2",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Inclined Light",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Inclined Light2",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Huge Spotlight",
+    "price": 15000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Flag",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Flag",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Truck Depot",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.06
+  },
+
+  {
+    "name": "Advanced Pollution Meter",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Research Station",
+    "price": 75,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Time Tracker",
+    "price": 120,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Hyper Depot",
+    "price": 16000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Hot Water Pump",
+    "price": 0,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Dev Solar Panel",
+    "price": 0,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Weird Decoration",
+    "price": 666666,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Firework",
+    "price": 2000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Item Pipe Value",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Fluid Pipe Value",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Clock",
+    "price": 4000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Knot",
+    "price": 10000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Memory",
+    "price": 10000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Button",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Relay",
+    "price": 12500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Switch",
+    "price": 2500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Time Gate",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Pole",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "AND Gate",
+    "price": 2500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "NAND Gate",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "OR Gate",
+    "price": 2000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "XOR Gate",
+    "price": 2500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "NOT Gate",
+    "price": 1250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "NOR Gate",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Resistor",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "White LED",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Breaker",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pollution Gate",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Item Meter",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Meter",
+    "price": 7500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Pulse",
+    "price": 2000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Delay",
+    "price": 2000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Adder",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Color LED",
+    "price": 3000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Dabble",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Seven Segment Display",
+    "price": 35000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  }
 ]
