@@ -2530,7 +2530,7 @@ async function file(thing) {
 async function loadItems() { 
   for (i = 1; i <= 4; i++) {
     // let items = dictionary[`t${i}-items`]; // what if we just try.
-    let items = await file(`dictionary-its-for-editing/t${i}-items`)
+    let items = await file(`dictionary-its-for-editing/t${i}-items.json`)
     Promise.resolve(items).then(data => items = data)
     
     const container = document.getElementById(`tier${i}items`);
