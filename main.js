@@ -2513,25 +2513,25 @@ let highlightedItem = null;
 const GRID_SIZE = 50;
 
 // I need node!!!!!!
-async function file(thing) {
-  let returnValue;
-  fetch("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + thing)
-  .then(response => {
-    returnValue = response.json();
-  }) // Convert response to JSON
-  .then(data => {
-    return returnValue // Work with the JSON data
-  })
-  .catch(error => {
-    console.error('Error fetching the JSON file:', error);
-  });
-} // No need... OR DO WE? (VSauce Music Plays)
+// async function file(thing) {
+//   let returnValue;
+//   fetch("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + thing)
+//   .then(response => {
+//     returnValue = response.json();
+//   }) // Convert response to JSON
+//   .then(data => {
+//     return returnValue // Work with the JSON data
+//   })
+//   .catch(error => {
+//     console.error('Error fetching the JSON file:', error);
+//   });
+// } // No need... OR DO WE? (VSauce Music Plays)
 
-async function loadItems() { 
+function loadItems() { 
   for (i = 1; i <= 4; i++) {
-    // let items = dictionary[`t${i}-items`]; // what if we just try.
-    let items = await file(`dictionary-its-for-editing/t${i}-items.json`)
-    Promise.resolve(items).then(data => items = data)
+    let items = dictionary[`t${i}-items`]; // what if we just try.
+    // let items = await file(`dictionary-its-for-editing/t${i}-items.json`)
+    // Promise.resolve(items).then(data => items = data)
     
     const container = document.getElementById(`tier${i}items`);
 
