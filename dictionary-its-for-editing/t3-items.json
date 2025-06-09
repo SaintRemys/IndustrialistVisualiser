@@ -1,822 +1,848 @@
 [
-	{
-		"name": "Advanced Oil Separator",
-		"price": 1250000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.324
-	},
-	{
-		"name": "Alloyer",
-		"price": 999999,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.324
-	},
-	{
-		"name": "Atmospheric Distillation Plant",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 6.48
-	},
-	{
-		"name": "Battery Charger",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Blast Furnace",
-		"price": 60000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.216
-	},
-	{
-		"name": "Blast Furnace MK2",
-		"price": 5000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.36
-	},
-	{
-		"name": "Bottling Plant",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Breaker",
-		"price": 8000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Breaker Box",
-		"price": 75000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Chemical Reactor",
-		"price": 750000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 1.62
-	},
-	{
-		"name": "Coal Liquefaction Plant",
-		"price": 750000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Cold Bypass Pipe",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Electric Water Heater",
-		"price": 100020,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Junction",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Junction2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Section",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Section2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Turn",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe Turn2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Fluid Pipe2",
-		"price": 150,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gas Burner",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.178
-	},
-	{
-		"name": "Gas Refinery",
-		"price": 175000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.216
-	},
-	{
-		"name": "Gasoline Generator",
-		"price": 900,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.648
-	},
-	{
-		"name": "Gold Acid Refinery",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.216
-	},
-	{
-		"name": "Gold Fluid Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Item Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "HMVT",
-		"price": 10000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "HV Battery",
-		"price": 17500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Huge Truck Depot",
-		"price": 3200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.135
-	},
-	{
-		"name": "Industrial Diesel Refinery",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.32
-	},
-	{
-		"name": "Industrial Drill",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Industrial Electric Furnace",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.158
-	},
-	{
-		"name": "Industrial Firebox",
-		"price": 250000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 1.8
-	},
-	{
-		"name": "Industrial Oil Separator",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.32
-	},
-	{
-		"name": "Industrial Roller",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Industrial Sawmill",
-		"price": 75000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Item Overflow Gate",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Item Valve Control",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "LNG Plant",
-		"price": 250000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Diesel Engine",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.648
-	},
-	{
-		"name": "Large Liquid Truck Depot",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.48
-	},
-	{
-		"name": "Large Pumpjack",
-		"price": 250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Liquid Boiler",
-		"price": 80000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Lithium Brine Extractor",
-		"price": 120000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 1.44
-	},
-	{
-		"name": "Lithium Ore Drill",
-		"price": 250000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Long Fluid Pipe2",
-		"price": 500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Long Pipe2",
-		"price": 650,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Natural Gas Well",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Oil Fracking Tower",
-		"price": 60000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.432
-	},
-	{
-		"name": "Overflow Gate",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Oxidation Plant",
-		"price": 200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Paper Mill",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.432
-	},
-	{
-		"name": "Pipe Junction",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Junction2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Section",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Section2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Turn",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Turn2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe2",
-		"price": 250,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Plastic Molding Machine",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Plastic Production Facility",
-		"price": 350000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Plastic Refinery",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.216
-	},
-	{
-		"name": "Power Control",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Power Dump",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Power Rate Calculator 2",
-		"price": 7000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Press MK2",
-		"price": 333333,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pressurized Water Filter",
-		"price": 350000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Research Station2",
-		"price": 2000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Roller MK2",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Sand Excavator",
-		"price": 10000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Scrubber (Distilled)",
-		"price": 30000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": -6.29
-	},
-	{
-		"name": "Short Fluid Pipe",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Short Fluid Pipe2",
-		"price": 50,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Short Pipe",
-		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Short Pipe2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Soil Excavator",
-		"price": 250000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Solar Farm1",
-		"price": 200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Solar Panel3",
-		"price": 1500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Steam Cracking Plant",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.432
-	},
-	{
-		"name": "Trommel",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Valve Control",
-		"price": 4000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Wind Turbine3",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	}
+  {
+    "name": "Solar Farm 1",
+    "price": 200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Solar Panel 3",
+    "price": 1500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Wind Turbine 3",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Generator",
+    "price": 4500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.648
+  },
+
+  {
+    "name": "Electric Water Heater",
+    "price": 100200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Gas Burner",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.089
+  },
+
+  {
+    "name": "HMVT",
+    "price": 10000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Power Rate Calculator 3",
+    "price": 5000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Advanced Power Rate Meter",
+    "price": 7000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Gold Item Storage Silo",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Gold Fluid Storage Silo",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Short Pipe2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe2",
+    "price": 250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Long Pipe2",
+    "price": 650,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Junction2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Section2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Turn2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Short Fluid Pipe2",
+    "price": 50,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe2",
+    "price": 150,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Long Fluid Pipe2",
+    "price": 500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Junction2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Turn2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Fluid Pipe Section2",
+    "price": 100,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Flow Item Meter",
+    "price": 0,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Flow Fluid Meter",
+    "price": 0,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Overflow Gate",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Item Overflow Gate",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Cold Bypass Pipe",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Valve Control",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Item Value Control",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Industrial Firebox",
+    "price": 250000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 1.8
+  },
+
+  {
+    "name": "HV Battery",
+    "price": 17500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Power Control",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Power Dump",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Industrial Drill",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Lithium Ore Drill",
+    "price": 250000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Sand Excavator",
+    "price": 10000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Soil Excavator",
+    "price": 250000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Pumpjack",
+    "price": 250,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Lithium Brine Extractor",
+    "price": 120000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 1.44
+  },
+
+  {
+    "name": "Natural Gas Well",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Oil Fracking Tower",
+    "price": 60000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.432
+  },
+
+  {
+    "name": "Advanced Assembler",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Alloyer",
+    "price": 999999,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.324
+  },
+
+  {
+    "name": "Blast Furnace",
+    "price": 60000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.216
+  },
+
+  {
+    "name": "Blast Furnace MK2",
+    "price": 5000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.36
+  },
+
+  {
+    "name": "Industrial Electric Furnace",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.158
+  },
+
+  {
+    "name": "Battery Charger",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Chemical Reactor",
+    "price": 750000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 1.62
+  },
+
+  {
+    "name": "Condenser",
+    "price": 900,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.184
+  },
+
+  {
+    "name": "Paper Mill",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.432
+  },
+
+  {
+    "name": "Plastic Production Facility",
+    "price": 350000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pressurized Water Filter",
+    "price": 350000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Plastic Molding Machine",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Atmospheric Distillation Plant",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 6.48
+  },
+
+  {
+    "name": "Bottling Plant",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Coal Liquefaction Plant",
+    "price": 750000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "LNG Plant",
+    "price": 250000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Oxidation Plant",
+    "price": 200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Steam Cracking Plant",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.432
+  },
+
+  {
+    "name": "Industrial Roller",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Industrial Sawmill",
+    "price": 75000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Press MK2",
+    "price": 333333,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Roller MK2",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Trommel",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Gas Refinery",
+    "price": 175000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.216
+  },
+
+  {
+    "name": "Gold Acid Refinery",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.216
+  },
+
+  {
+    "name": "Industrial Diesel Refinery",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.32
+  },
+
+  {
+    "name": "Plastic Refinery",
+    "price": 100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.216
+  },
+
+  {
+    "name": "Advanced Oil Separator",
+    "price": 1250000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.324
+  },
+
+  {
+    "name": "Industrial Oil Separator",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.32
+  },
+
+  {
+    "name": "Huge Truck Depot",
+    "price": 3200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.135
+  },
+
+  {
+    "name": "Large Liquid Truck Depot",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.48
+  },
+
+  {
+    "name": "Research Station2",
+    "price": 2000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Advanced Power Rate Meter",
+    "price": 7000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Gold Fluid Storage Silo",
+    "price": 10000000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Scrubber",
+    "price": 30000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+  "pollution": -1.655
+  }
 ]
