@@ -2551,7 +2551,7 @@ function loadItems() {
       
       const img = document.createElement("img");
       if (item.image == "") {
-        img.src = translatePath("assets/buildingBlocks/QuestionMark.png");
+        img.src = translatePath("assets/buildingBlocks/misc/QuestionMark.png");
       } else {
         img.src = translatePath("assets/buildingBlocks/" + item.image);
       }
