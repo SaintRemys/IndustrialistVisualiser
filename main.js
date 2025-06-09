@@ -124,8 +124,8 @@ const dictionary = {
 	{
 		"name": "Farm Harvester",
 		"price": 650,
-		"width": 1,
-		"height": 1,
+		"width": 8,
+		"height": 8,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/6/66/Farmharvester_idle.png",
 		"texture": null,
@@ -134,8 +134,8 @@ const dictionary = {
 	{
 		"name": "Firework",
 		"price": 2000,
-		"width": 1,
-		"height": 1,
+		"width": 2,
+		"height": 2,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/2/24/Firework.png",
 		"texture": null,
@@ -164,8 +164,8 @@ const dictionary = {
 	{
 		"name": "Hand Crank",
 		"price": 100,
-		"width": 1,
-		"height": 1,
+		"width": 2,
+		"height": 2,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/thumb/5/5d/Hand_Crank.png/240px-Hand_Crank.png",
 		"texture": null,
@@ -174,8 +174,8 @@ const dictionary = {
 	{
 		"name": "Hand Pump",
 		"price": 2500000,
-		"width": 1,
-		"height": 1,
+		"width": 2,
+		"height": 2,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/thumb/8/88/Hand_Pump.png/206px-Hand_Pump.png",
 		"texture": null,
@@ -704,8 +704,8 @@ const dictionary = {
 	{
 		"name": "Tree",
 		"price": 80,
-		"width": 1,
-		"height": 1,
+		"width": 6,
+		"height": 6,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/thumb/a/ac/Tree.png/262px-Tree.png",
 		"texture": null,
@@ -714,8 +714,8 @@ const dictionary = {
 	{
 		"name": "Tree Farm Controller",
 		"price": 750,
-		"width": 1,
-		"height": 1,
+		"width": 4,
+		"height": 4,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/0/04/Tree_Farm_Controller.png",
 		"texture": null,
@@ -724,8 +724,8 @@ const dictionary = {
 	{
 		"name": "Tree Farm Output",
 		"price": 200,
-		"width": 1,
-		"height": 1,
+		"width": 4,
+		"height": 4,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/f/f7/TreeFarmOutput.png",
 		"texture": null,
@@ -734,8 +734,8 @@ const dictionary = {
 	{
 		"name": "Tree Farm Sprinkler",
 		"price": 200,
-		"width": 1,
-		"height": 1,
+		"width": 4,
+		"height": 4,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/3/39/TreeFarmSprinkler2.png",
 		"texture": null,
@@ -744,8 +744,8 @@ const dictionary = {
 	{
 		"name": "Tree Farm Water Tank",
 		"price": 500,
-		"width": 1,
-		"height": 1,
+		"width": 10,
+		"height": 4,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/1/1e/TreeFarmWaterTank2.png",
 		"texture": null,
@@ -754,8 +754,8 @@ const dictionary = {
 	{
 		"name": "Truck Depot",
 		"price": 100,
-		"width": 1,
-		"height": 1,
+		"width": 5,
+		"height": 4,
 		"color": "#FFFFFF",
 		"image": "https://static.wikitide.net/industrialistwiki/thumb/7/77/Truck_Depot.png/320px-Truck_Depot.png",
 		"texture": "T1/TruckDepot.png",
@@ -1836,28 +1836,8 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Pipe Junction2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
 		"name": "Pipe Section",
 		"price": 2,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pipe Section2",
-		"price": 100,
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
@@ -1876,23 +1856,13 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Pipe Turn2",
-		"price": 100,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
 		"name": "Pipe2",
 		"price": 250,
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
 		"image": "",
-		"texture": null,
+		"texture": "T3/ShortPipe.png",
 		"pollution": 0
 	},
 	{
