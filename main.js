@@ -2537,7 +2537,7 @@ const GRID_SIZE = 50;
 //   });
 // } // No need... OR DO WE? (VSauce Music Plays)
 
-async function loadItems() { 
+function loadItems() { 
   for (i = 1; i <= 4; i++) {
     let items;
     try {
