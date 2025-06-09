@@ -2515,7 +2515,7 @@ const GRID_SIZE = 50;
 // I need node!!!!!!
 async function file(thing) {
   let returnValue;
-  fetch(thing)
+  fetch("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + thing)
   .then(response => {
     returnValue = response.json();
   }) // Convert response to JSON
