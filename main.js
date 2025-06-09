@@ -282,16 +282,6 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Industrial Press",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
 		"name": "Ingot Molder",
 		"price": 150,
 		"width": 1,
@@ -312,7 +302,7 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Item Meter",
+		"name": "Fluid Meter",
 		"price": 7500,
 		"width": 1,
 		"height": 1,
@@ -512,26 +502,6 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Medium Fluid Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Medium Item Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
 		"name": "Metal Sign",
 		"price": 900,
 		"width": 1,
@@ -614,16 +584,6 @@ const dictionary = {
 	{
 		"name": "Research Station",
 		"price": 75,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Research Station2",
-		"price": 2000,
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
@@ -838,7 +798,7 @@ const dictionary = {
 		"height": 1,
 		"color": "#FFFFFF",
 		"image": "",
-		"texture": null,
+		"texture": "T1/TruckDepot.png",
 		"pollution": 0.06
 	},
 	{
@@ -2598,7 +2558,12 @@ async function loadItems() {
       itemDiv.textContent = `${item.name} - $${item.price}`;
       
       const img = document.createElement("img");
-      img.src = item.image;
+      if (item.image == "") {
+        img.src = "assets/buildingBlocks/QuestionMark.png";
+      } else {
+        img.src = "assets/buildingBlocks/" + item.image;
+      }
+      
       img.alt = item.name;
       
       const label_top = document.createElement("div");
