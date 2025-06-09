@@ -2494,7 +2494,7 @@ function loadItems() {
       if (item.image == "") {
         img.src = translatePath("assets/buildingBlocks/misc/QuestionMark.png");
       } else {
-        img.src = translatePath("assets/buildingBlocks/" + item.image);
+        img.src = item.image;
       }
       
       img.alt = item.name;
