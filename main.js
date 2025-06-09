@@ -1,4 +1,4 @@
-
+const fs = require("fs");
 
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
@@ -31,25 +31,31 @@ let highlightedItem = null;
 const GRID_SIZE = 50;
 
 // I need node!!!!!!
-async function file(thing) {
-  let returnValue;
-  fetch(thing)
-  .then(response => {
-    returnValue = response.json();
-  }) // Convert response to JSON
-  .then(data => {
-    return returnValue // Work with the JSON data
-  })
-  .catch(error => {
-    console.error('Error fetching the JSON file:', error);
-  });
-}
+// async function file(thing) {
+//   let returnValue;
+//   fetch(thing)
+//   .then(response => {
+//     returnValue = response.json();
+//   }) // Convert response to JSON
+//   .then(data => {
+//     return returnValue // Work with the JSON data
+//   })
+//   .catch(error => {
+//     console.error('Error fetching the JSON file:', error);
+//   });
+// } // No need... OR DO WE? (VSauce Music Plays)
 
-async function loadItems() {
+async function loadItems() { 
   for (i = 1; i <= 4; i++) {
     let items;
     try {
-      items = await new file(`dictionary/t${i}-items.json`);
+      fs.readFile(`dictionary/t${i}-items.json`, "utf-8", (err, data) => {
+        if (err) {
+          console.error("Error reading file:", err);
+          return;
+        }
+        items = JSON.parse(data)
+      });
     } catch {
       continue
     }
