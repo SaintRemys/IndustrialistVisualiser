@@ -1,4 +1,5 @@
 // OK, YOU KNOW WHAT? FINE, YOU WIN. I'M GONNA BUNDLE ALL THE STUPID FUCKING DICTIONARY INSIDE THIS ENTIRE FILE.
+// Blud on crashout era frfr
 const dictionary = {
   "t1-items":  [
 	{
@@ -2938,6 +2939,8 @@ const tierButtons = [
   { btn: document.getElementById('tier4'), container: document.getElementById('tier4items') },
 ];
 
+const sidebar = document.getElementById('sidebar');
+
 tierButtons.forEach(({ btn, container }) => {
   btn.addEventListener('click', () => {
     tierButtons.forEach(({ btn }) => btn.classList.remove('selected'));
@@ -2945,8 +2948,12 @@ tierButtons.forEach(({ btn, container }) => {
 
     tierButtons.forEach(({ container }) => container.style.display = 'none');
     container.style.display = 'block';
+
+    sidebar.scrollTop = 0;
+    sidebar.scrollLeft = 0;
   });
 });
+
 
 const tiers = [
   { element: document.getElementById('tier1'), selectedClass: 'selected1' },
