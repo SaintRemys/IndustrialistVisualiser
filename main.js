@@ -127,7 +127,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/6/66/Farmharvester_idle.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -137,7 +137,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/2/24/Firework.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -162,42 +162,12 @@ const dictionary = {
 		"pollution": 0
 	},
 	{
-		"name": "Fluid Meter",
-		"price": 7500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Fluid Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Item Storage Silo",
-		"price": 100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
 		"name": "Hand Crank",
 		"price": 100,
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/thumb/5/5d/Hand_Crank.png/240px-Hand_Crank.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -207,7 +177,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/thumb/8/88/Hand_Pump.png/206px-Hand_Pump.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -697,7 +667,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/5/5d/Solar_Panel.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -737,7 +707,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/thumb/a/ac/Tree.png/262px-Tree.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -747,7 +717,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/0/04/Tree_Farm_Controller.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -757,7 +727,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/f/f7/TreeFarmOutput.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -767,7 +737,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/3/39/TreeFarmSprinkler2.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -777,7 +747,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/1/1e/TreeFarmWaterTank2.png",
 		"texture": null,
 		"pollution": 0
 	},
@@ -787,7 +757,7 @@ const dictionary = {
 		"width": 1,
 		"height": 1,
 		"color": "#FFFFFF",
-		"image": "",
+		"image": "https://static.wikitide.net/industrialistwiki/thumb/7/77/Truck_Depot.png/320px-Truck_Depot.png",
 		"texture": "T1/TruckDepot.png",
 		"pollution": 0.06
 	},
@@ -2550,6 +2520,7 @@ function loadItems() {
       itemDiv.textContent = `${item.name} - $${item.price}`;
       
       const img = document.createElement("img");
+      img.className = "icon"
       if (item.image == "") {
         img.src = translatePath("assets/buildingBlocks/misc/QuestionMark.png");
       } else {

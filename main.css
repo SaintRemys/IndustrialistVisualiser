@@ -270,6 +270,12 @@ canvas {
   transform-origin: center;
 }
 
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
