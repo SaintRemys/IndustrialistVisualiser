@@ -1,492 +1,508 @@
 [
-	{
-		"name": "Advanced Coal Drill",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Advanced Copper Drill",
-		"price": 520,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Advanced MV Pole",
-		"price": 300,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Boiler",
-		"price": 900,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Coal Power Plant",
-		"price": 10001984,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Cooling Tower",
-		"price": 2500000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Copper Drill",
-		"price": 190,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.108
-	},
-	{
-		"name": "Crude Oil Separator",
-		"price": 1500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.432
-	},
-	{
-		"name": "Diesel Engine Air Input",
-		"price": 4500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Controller",
-		"price": 9000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Crankshaft",
-		"price": 4000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Crankshaft Sideways",
-		"price": 600,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Cylinder",
-		"price": 4000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Decoration",
-		"price": 400,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Exhaust",
-		"price": 4500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": null
-	},
-	{
-		"name": "Diesel Engine Flywheel",
-		"price": 8000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Fuel Input",
-		"price": 4500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Generator",
-		"price": 6000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Engine Info Panel",
-		"price": 6000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Diesel Generator",
-		"price": 4500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.648
-	},
-	{
-		"name": "Diesel Refinery",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.216
-	},
-	{
-		"name": "Double MV Battery",
-		"price": 900,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Exhaust Stack",
-		"price": 220000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 691.2
-	},
-	{
-		"name": "Filtration Plant",
-		"price": 20000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Firebox",
-		"price": 550,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 1.08
-	},
-	{
-		"name": "Geothermal Well",
-		"price": 1500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Gold Drill",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.2
-	},
-	{
-		"name": "Grinder",
-		"price": 10000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Heat Exchanger",
-		"price": 2718281,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Turbine",
-		"price": 4000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Liquid Burner",
-		"price": 1000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 1000
-	},
-	{
-		"name": "Liquid Dump",
-		"price": 500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 500
-	},
-	{
-		"name": "Liquid Truck Depot",
-		"price": 500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.045
-	},
-	{
-		"name": "MV Battery",
-		"price": 240,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "MV Pole",
-		"price": 80,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Medium Fluid Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Medium Item Storage Silo",
-		"price": 200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Oil Rig",
-		"price": 1200,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.0288
-	},
-	{
-		"name": "Polisher",
-		"price": 1200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pollution Meter",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Pollution Meter",
-		"price": 5000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Power Rate Calculator",
-		"price": 120,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Small MV Pole",
-		"price": 40,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Solar Panel2",
-		"price": 1500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Steam Condenser",
-		"price": 2400000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Uranium Drill",
-		"price": 3500000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 2.16
-	},
-	{
-		"name": "Van Depot",
-		"price": 160,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.045
-	},
-	{
-		"name": "Water Pump 2",
-		"price": 6000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Wind Turbine2",
-		"price": 1785,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	}
+  {
+    "name": "Geothermal Well",
+    "price": 1500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+  
+  {
+    "name": "Solar Panel 2",
+    "price": 1500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Wind Turbine 2",
+    "price": 1785,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Firebox",
+    "price": 550,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 1.08
+  },
+
+  {
+    "name": "Gasoline Generator",
+    "price": 900,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.648
+  },
+
+  {
+    "name": "Large Diesel Engine",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.54
+  },
+
+  {
+    "name": "Large Turbine",
+    "price": 4000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Double MV Battery",
+    "price": 900,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Small MV Pole",
+    "price": 40,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "MV Pole",
+    "price": 80,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Advanced MV Pole",
+    "price": 300,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Power Rate Calculator 2",
+    "price": 7000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Controller",
+    "price": 9000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Crankshaft",
+    "price": 4000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Cylinder",
+    "price": 4000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Generator",
+    "price": 6000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Flywheel",
+    "price": 8000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Fuel Input",
+    "price": 4500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Air Input",
+    "price": 4500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Exhaust",
+    "price": 4500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 7.5
+  },
+
+  {
+    "name": "Diesel Engine Decoration",
+    "price": 400,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Info Panel",
+    "price": 6000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Engine Crankshaft Sideways",
+    "price": 600,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Medium Item Storage Silo",
+    "price": 200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Medium Fluid Storage Silo",
+    "price": 200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pipe Value",
+    "price": 4000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "MV Battery",
+    "price": 240,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+    {
+    "name": "Boiler",
+    "price": 900,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Breaker",
+    "price": 8000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Breaker Box",
+    "price": 75000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Advanced Coal Drill",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Advanced Copper Drill",
+    "price": 520,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Copper Drill",
+    "price": 190,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.108
+  },
+
+  {
+    "name": "Oil Rig",
+    "price": 1200,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.0288
+  },
+
+  {
+    "name": "Water Pump 2",
+    "price": 6000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Liquid Boiler",
+    "price": 80000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Filtration Plant",
+    "price": 20000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Grinder",
+    "price": 10000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Diesel Refinery",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.216
+  },
+
+  {
+    "name": "Van Depot",
+    "price": 160,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.045
+  },
+
+  {
+    "name": "Liquid Truck Depot",
+    "price": 500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.045
+  },
+
+
+  {
+    "name": "Liquid Burner",
+    "price": 1000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Liquid Dump",
+    "price": 500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Pollution Meter",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Uranium Drill",
+    "price": 8000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Gold Drill",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.2
+  }
 ]
