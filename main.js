@@ -2453,20 +2453,6 @@ let highlightedItem = null;
 
 const GRID_SIZE = 50;
 
-// I need node!!!!!!
-// async function file(thing) {
-//   let returnValue;
-//   fetch("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + thing)
-//   .then(response => {
-//     returnValue = response.json();
-//   }) // Convert response to JSON
-//   .then(data => {
-//     return returnValue // Work with the JSON data
-//   })
-//   .catch(error => {
-//     console.error('Error fetching the JSON file:', error);
-//   });
-// } // No need... OR DO WE? (VSauce Music Plays)
 
 function translatePath(path) {
   return ("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + path)
@@ -2493,7 +2479,7 @@ function loadItems() {
       const img = document.createElement("img");
       img.className = "icon"
       if (item.image == "") {
-        img.src = translatePath("assets/buildingBlocks/misc/QuestionMark.png");
+        img.src = "https://i.postimg.cc/dV7QpGLC/output-onlinepngtools-1.png";
       } else {
         img.src = item.image;
       }
@@ -2517,7 +2503,6 @@ function loadItems() {
 }
 
 loadItems();
-console.log("Stage Test");
 
 function getRotatedSize(w, h, rot) {
   rot = ((rot % 360) + 360) % 360;
@@ -2973,3 +2958,6 @@ tiers.forEach(({ element, selectedClass }) => {
 });
 tiers[0].element.classList.add(tiers[0].selectedClass);
 
+fetch('./test.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
