@@ -2527,6 +2527,10 @@ const GRID_SIZE = 50;
 //   });
 // } // No need... OR DO WE? (VSauce Music Plays)
 
+function translatePath(path) {
+  return ("https://raw.githubusercontent.com/SaintRemys/IndustrialistVisualiser/refs/heads/main/" + path)
+}
+
 function loadItems() { 
   for (i = 1; i <= 4; i++) {
     let items = dictionary[`t${i}-items`]; // what if we just try.
@@ -2547,9 +2551,9 @@ function loadItems() {
       
       const img = document.createElement("img");
       if (item.image == "") {
-        img.src = "assets/buildingBlocks/QuestionMark.png";
+        img.src = translatePath("assets/buildingBlocks/QuestionMark.png");
       } else {
-        img.src = "assets/buildingBlocks/" + item.image;
+        img.src = translatePath("assets/buildingBlocks/" + item.image);
       }
       
       img.alt = item.name;
