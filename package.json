@@ -16,5 +16,8 @@
     "url": "https://github.com/SaintRemys/IndustrialistVisualiser/issues"
   },
   "homepage": "https://github.com/SaintRemys/IndustrialistVisualiser#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
 }
