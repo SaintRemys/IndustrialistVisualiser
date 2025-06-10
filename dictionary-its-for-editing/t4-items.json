@@ -1,322 +1,386 @@
 [
-	{
-		"name": "Advanced Assembler",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Condenser",
-		"price": 900,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.184
-	},
-	{
-		"name": "Electrolysis Plant",
-		"price": 650000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Foundry",
-		"price": 200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0.29
-	},
-	{
-		"name": "HV Advanced Power Rate Calculator(?)",
-		"price": 750000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "HV Battery MK2",
-		"price": 20000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "HV Pole",
-		"price": 2500000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "HV Transformer",
-		"price": 750000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Hand Crank MK2",
-		"price": 200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "High Pressure Turbine",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Intermediate Pressure Turbine",
-		"price": 500000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Conversion",
-		"price": 125000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Fluid Passthrough",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Intersection",
-		"price": 200000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Item Passthrough",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Junction",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Section",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Large Fluid Pipe Turn",
-		"price": 25000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Lathe",
-		"price": 5000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Logic Assembler",
-		"price": 25000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Long Large Fluid Pipe",
-		"price": 50000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Low Pressure Turbine",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Mineshaft Drill",
-		"price": 1100000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Power Rate Calculator 3",
-		"price": 5000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Precision Assembler",
-		"price": 1000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Short Large Fluid Pipe",
-		"price": 12500,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Turbine Generator",
-		"price": 5000000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Turbine Input",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Turbine Output",
-		"price": 150000,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Vertical Heat Exchanger",
-		"price": 2718281,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	},
-	{
-		"name": "Water Treatment Plant",
-		"price": 700001,
-		"width": 1,
-		"height": 1,
-		"color": "#FFFFFF",
-		"image": "",
-		"texture": null,
-		"pollution": 0
-	}
+{
+    "name": "Coal Power Plant",
+    "price": 10001984,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Cooling Tower",
+    "price": 2500000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Exhaust Stack",
+    "price": 220000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 345.6
+  },
+
+  {
+    "name": "Heat Exchanger",
+    "price": 2718281,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Polisher",
+    "price": 1200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Steam Condenser",
+    "price": 2400000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Vertical Heat Exchanger",
+    "price": 2718281,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "HV Battery MK2",
+    "price": 20000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "HV Pole",
+    "price": 2500000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Real Dev Solar Panel",
+    "price": 5000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Turbine Input",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "High Pressure Turbine",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Intermediate Pressure Turbine",
+    "price": 500000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Low Pressure Turbine",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Turbine Generator",
+    "price": 5000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Turbine Output",
+    "price": 150000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Item Passthrough",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Fluid Passthrough",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Junction",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Section",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Long Large Fluid Pipe",
+    "price": 50000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Short Large Fluid Pipe",
+    "price": 12500,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Turn",
+    "price": 25000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Conversion",
+    "price": 125000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Large Fluid Pipe Intersection",
+    "price": 200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "HV Advanced Power Rate Calculator",
+    "price": 750000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "HV Transformer",
+    "price": 750000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Mineshaft Drill",
+    "price": 1100000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Logic Assembler",
+    "price": 25000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Precision Assembler",
+    "price": 1000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Foundry",
+    "price": 200000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0.17
+  },
+
+  {
+    "name": "Electrolysis Plant",
+    "price": 650000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Water Treatment Plant",
+    "price": 700001,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  },
+
+  {
+    "name": "Lathe",
+    "price": 5000000,
+    "width": 1,
+    "height": 1,
+    "color": "#FFFFFF",
+    "image": "",
+    "texture": null,
+    "pollution": 0
+  }
 ]
