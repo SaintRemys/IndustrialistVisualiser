@@ -247,55 +247,67 @@ canvas {
 
 #loader {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(17, 17, 17, 1);
+  background: rgb(39, 39, 39);
+  background-image: url('assets/buildingBlocks/misc/BackgroundGears.png');
+  background-repeat: repeat;
+  background-size: calc(100% / 40) auto;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  animation: fadeOutBG 1s ease forwards;
-  animation-delay: 4s;
+
+  animation-name: moveBG, fadeOutBG;
+  animation-duration: 4s, 1s;
+  animation-timing-function: linear, ease;
+  animation-iteration-count: infinite, 1;
+  animation-delay: 0s, 4s;
+  animation-fill-mode: none, forwards;
 }
 
 .spinner {
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
-  animation: spin 4s linear infinite, breakFall 1s ease-in forwards;
+  width: 221px;
+  height: 221px;
+  animation-name: spin, fadeOutBG;
+  animation-duration: 4s, 1s;
+  animation-timing-function: linear, ease;
+  animation-iteration-count: infinite, 1;
   animation-delay: 0s, 4s;
+  animation-fill-mode: none, forwards;
   transform-origin: center;
 }
 
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.Vignette {
+  animation-name: fadeOutBG;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
-@keyframes breakFall {
+
+@keyframes moveBG {
   0% {
-    transform: rotate(0deg) translateY(0);
-    opacity: 1;
-  }
-  10% {
-    transform: rotate(5deg) translateY(5px);
-  }
-  30% {
-    transform: rotate(-5deg) translateY(10px);
-  }
-  60% {
-    transform: rotate(3deg) translateY(0);
+    background-position: 0 0;
   }
   100% {
-    transform: rotate(0deg) translateY(550px);
-    opacity: 0;
+    background-position: -200px -200px;
   }
 }
 
 @keyframes fadeOutBG {
-  to { background: rgba(17, 17, 17, 0); }
+  to {
+    opacity: 0;
+    background: rgba(17, 17, 17, 0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Scrollbar styles */
