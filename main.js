@@ -231,7 +231,7 @@ function drawGrid() {
   const startY = -offsetY / zoom - GRID_SIZE;
 
   ctx.strokeStyle = "#FFFFFF";
-  ctx.lineWidth = 1 / zoom;
+  ctx.lineWidth = 1;
 
   for (let x = Math.floor(startX / GRID_SIZE) * GRID_SIZE; x < startX + cols * GRID_SIZE; x += GRID_SIZE) {
     ctx.beginPath();

@@ -75,8 +75,18 @@ html, body {
   flex-direction: column;
   gap: 12px;
   padding: 10px;
-  background: #151515;
+  background: #353535;
   width: max-content;
+  background-image: url('assets/buildingBlocks/misc/HammerBG.png');
+  background-repeat: repeat;
+  background-size: calc(100%/2) auto;
+
+  animation-name: moveBG2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: none;
 }
 
 .item {
@@ -291,6 +301,15 @@ canvas {
 
 
 @keyframes moveBG {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200px -200px;
+  }
+}
+
+@keyframes moveBG2 {
   0% {
     background-position: 0 0;
   }
